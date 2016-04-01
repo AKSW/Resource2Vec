@@ -18,8 +18,6 @@ public class R2VTest {
 
 		System.out.println(model.info());
 		
-		model.reduce();
-		
 	}
 	
 

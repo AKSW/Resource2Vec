@@ -304,6 +304,8 @@ public class R2VModel {
 	 */
 	public void reduce() {
 		
+		logger.info("Starting dimensionality reduction...");
+		
 		HashMap<String, Double> mp = getMeanPoint();
 		// assign an integer index to each feature
 		HashMap<String, Integer> index = new HashMap<>();
@@ -323,14 +325,16 @@ public class R2VModel {
 		}
 		
 		// return to first element
+		logger.info("Computing PCA...");
 		it = instances.values().iterator();
 		double[][] out = pca.transform();
+		logger.info("===== OUTPUT VECTORS =====");
 		for(int i=0; i<out.length; i++) {
 			double[] outR = out[i];
-			System.out.print(it.next() + "\t");
+			String str = it.next() + "\t";
 			for(double outV : outR)
-				System.out.print(outV + ", ");
-			System.out.println();
+				str += (outV + ", ");
+			logger.info(str);
 		}
 			
 		
