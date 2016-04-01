@@ -2,12 +2,16 @@ package org.aksw.r2v.model;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.aksw.r2v.pca.PCAnalysis;
 import org.aksw.r2v.strategy.FEXStrategy;
 import org.aksw.r2v.strategy.TfidfFEXStrategy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLAnnotationAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLAxiom;
@@ -15,8 +19,7 @@ import org.semanticweb.owlapi.model.OWLDatatype;
 import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 /**
  * Resource2Vec model.
@@ -26,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public class R2VModel {
 	
-	private final static Logger logger = LoggerFactory.getLogger(R2VModel.class);
+	private final static Logger logger = LogManager.getLogger(R2VModel.class);
 	
 	private OWLOntology ontology;
 	
@@ -125,7 +128,7 @@ public class R2VModel {
 				}
 			}
 		} else {
-			logger.info("WARNING: Unknown FEX strategy type! Skipping string processing...");
+			logger.warn("Unknown FEX strategy type! Skipping string processing...");
 		}
 		
 	}
@@ -294,6 +297,43 @@ public class R2VModel {
 			sum += Math.pow(aVal - bVal, 2);
 		}
 		return Math.sqrt(sum);
+	}
+
+	/**
+	 * 
+	 */
+	public void reduce() {
+		
+		HashMap<String, Double> mp = getMeanPoint();
+		// assign an integer index to each feature
+		HashMap<String, Integer> index = new HashMap<>();
+		int j = 0;
+		for(String feat : mp.keySet())
+			index.put(feat, j++);
+		
+		PCAnalysis pca = new PCAnalysis(instances.size(), mp.size());
+		
+		// fill out PCA input matrix
+		Iterator<R2VInstance> it = instances.values().iterator();
+		for(int i=0; it.hasNext(); i++) {
+			R2VInstance inst = it.next();
+			HashMap<String, Double> fsv = inst.getFlatSparseVector();
+			for(String feat : fsv.keySet())
+				pca.addValue(i, index.get(feat), fsv.get(feat));
+		}
+		
+		// return to first element
+		it = instances.values().iterator();
+		double[][] out = pca.transform();
+		for(int i=0; i<out.length; i++) {
+			double[] outR = out[i];
+			System.out.print(it.next() + "\t");
+			for(double outV : outR)
+				System.out.print(outV + ", ");
+			System.out.println();
+		}
+			
+		
 	}
 
 	

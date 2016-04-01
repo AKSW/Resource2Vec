@@ -16,7 +16,9 @@ public class R2VTest {
 		
 		R2VModel model = R2VManager.train("src/test/resources/person11.rdf", new TfidfFEXStrategy());
 
-		System.out.println(model.info());		
+		System.out.println(model.info());
+		
+		model.reduce();
 		
 	}
 	

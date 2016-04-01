@@ -42,12 +42,12 @@ public class R2VManager {
 		OWLOntology o = getOntology(filename);
 		R2VModel model = new R2VModel(o, strategy);
 		
-		model.stringFeatures();
-		model.normalize();
-		
 		for(OWLIndividual ind : getIndividuals(classname, o)) {
 			model.add(ind.asOWLNamedIndividual());
 		}
+		
+		model.stringFeatures();
+		model.normalize();
 		
 		return model;
 	}
