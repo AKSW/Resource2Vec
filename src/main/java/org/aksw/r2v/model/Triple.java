@@ -1,4 +1,4 @@
-package org.aksw.r2v;
+package org.aksw.r2v.model;
 
 import org.semanticweb.owlapi.model.OWLDatatype;
 

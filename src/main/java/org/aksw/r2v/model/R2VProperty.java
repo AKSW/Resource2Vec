@@ -1,4 +1,4 @@
-package org.aksw.r2v;
+package org.aksw.r2v.model;
 
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
