@@ -16,7 +16,7 @@ public class R2VMain {
 		
 		System.out.println(model.info());
 
-		model.reduce();
+		model.reduce(args[1]);
 
 	}
 

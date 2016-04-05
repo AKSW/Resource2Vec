@@ -20,6 +20,8 @@ import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 
+import com.mkobos.pca_transform.PCA.TransformationType;
+
 
 /**
  * Resource2Vec model.
@@ -300,11 +302,12 @@ public class R2VModel {
 	}
 
 	/**
+	 * @param args 
 	 * 
 	 */
-	public void reduce() {
+	public void reduce(String args) {
 		
-		logger.info("Starting dimensionality reduction...");
+		logger.info("Starting dimensionality reduction with argument = '"+args+"'...");
 		
 		HashMap<String, Double> mp = getMeanPoint();
 		// assign an integer index to each feature
@@ -313,30 +316,42 @@ public class R2VModel {
 		for(String feat : mp.keySet())
 			index.put(feat, j++);
 		
-		PCAnalysis pca = new PCAnalysis(instances.size(), mp.size());
-		
-		// fill out PCA input matrix
-		Iterator<R2VInstance> it = instances.values().iterator();
-		for(int i=0; it.hasNext(); i++) {
-			R2VInstance inst = it.next();
-			HashMap<String, Double> fsv = inst.getFlatSparseVector();
-			for(String feat : fsv.keySet())
-				pca.addValue(i, index.get(feat), fsv.get(feat));
-		}
-		
-		// return to first element
-		logger.info("Computing PCA...");
-		it = instances.values().iterator();
-		double[][] out = pca.transform();
-		logger.info("===== OUTPUT VECTORS =====");
-		for(int i=0; i<out.length; i++) {
-			double[] outR = out[i];
-			String str = it.next() + "\t";
-			for(double outV : outR)
-				str += (outV + ", ");
-			logger.info(str);
-		}
+		String mkobos = "mkobos-";
+		if(args.startsWith(mkobos)) {
 			
+			TransformationType type;
+			try {
+				type = TransformationType.valueOf(args.substring(7).toUpperCase());
+			} catch (IllegalArgumentException e) {
+				logger.error("Unknown transformation type. Allowed: rotation, whitening.");
+				return;
+			}
+			
+			PCAnalysis pca = new PCAnalysis(instances.size(), mp.size(), type);
+			
+			// fill out PCA input matrix
+			Iterator<R2VInstance> it = instances.values().iterator();
+			for(int i=0; it.hasNext(); i++) {
+				R2VInstance inst = it.next();
+				HashMap<String, Double> fsv = inst.getFlatSparseVector();
+				for(String feat : fsv.keySet())
+					pca.addValue(i, index.get(feat), fsv.get(feat));
+			}
+			
+			// return to first element
+			logger.info("Computing PCA...");
+			it = instances.values().iterator();
+			double[][] out = pca.transform();
+			logger.info("===== OUTPUT VECTORS =====");
+			for(int i=0; i<out.length; i++) {
+				double[] outR = out[i];
+				String str = it.next() + "\t";
+				for(double outV : outR)
+					str += (outV + ", ");
+				logger.info(str);
+			}
+			
+		}
 		
 	}
 

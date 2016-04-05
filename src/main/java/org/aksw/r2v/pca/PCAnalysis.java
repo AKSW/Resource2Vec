@@ -1,6 +1,7 @@
 package org.aksw.r2v.pca;
 
 import com.mkobos.pca_transform.PCA;
+import com.mkobos.pca_transform.PCA.TransformationType;
 
 import Jama.Matrix;
 
@@ -13,10 +14,12 @@ public class PCAnalysis {
 	private Matrix mIn;
 	private Matrix mOut;
 	private PCA pca;
+	private TransformationType type;
 	
-	public PCAnalysis(int m, int n) {
+	public PCAnalysis(int m, int n, TransformationType type) {
 		super();
 		mIn = new Matrix(m, n);
+		this.type = type;
 	}
 	
 	public void addValue(int i, int j, double d) {
@@ -25,7 +28,7 @@ public class PCAnalysis {
 	
 	public double[][] transform() {
 		pca = new PCA(mIn);		
-		mOut = pca.transform(mIn, PCA.TransformationType.WHITENING);
+		mOut = pca.transform(mIn, type);
 		return mOut.getArray();
 	}
 	
