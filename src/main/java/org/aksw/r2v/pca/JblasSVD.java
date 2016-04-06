@@ -1,5 +1,6 @@
 package org.aksw.r2v.pca;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jblas.DoubleMatrix;
 import org.jblas.Singular;
@@ -9,6 +10,8 @@ import org.jblas.Singular;
  *
  */
 public class JblasSVD {
+	
+	private static Logger logger = LogManager.getLogger(JblasSVD.class);
 
 	public static void main(String[] args) {
 
@@ -18,7 +21,7 @@ public class JblasSVD {
 		for(int dim=1; dim<A[0].length; dim++) {
 			DoubleMatrix C = pca(A, dim);
 			visual("C(dim="+dim+")", C);
-			System.out.println("====================");
+			logger.info("====================");
 		}
 
 	}
@@ -58,9 +61,10 @@ public class JblasSVD {
 		
 		// calculate principal component matrix...
 		DoubleMatrix B = U.mmul(Sm);
+		visual("B", B);
 		// ...and its column rank
 		int r = colRank(B);
-//		System.out.println("col_rank = "+r);
+		logger.info("col_rank = "+r);
 		// keep only 'r' columns...
 		double[][] cData = new double[B.rows][r];
 		for(int i=0; i<B.rows; i++)
@@ -83,10 +87,6 @@ public class JblasSVD {
 	}
 
 	public static void visual(String name, Object o) {
-//		System.out.println(name + " = " + o.toString().replace(";", "\n"));
-	}
-
-	public static void visual(Logger logger, String name, Object o) {
 		logger.info(name + " =");
 		for(String str : o.toString().split(";"))
 			logger.info(str);

@@ -355,7 +355,7 @@ public class R2VModel {
 			
 		}
 		
-		if(args.equals("svd")) {
+		if(args.equals("jblas-svd")) {
 			
 			DoubleMatrix A = new DoubleMatrix(instances.size(), mp.size());
 			// fill out PCA input matrix
@@ -370,7 +370,7 @@ public class R2VModel {
 			logger.info("Computing PCA...");
 			DoubleMatrix C3 = JblasSVD.pca(A, 3);
 			logger.info("===== OUTPUT VECTORS =====");
-			JblasSVD.visual(logger, "C3", C3);
+			JblasSVD.visual("C3", C3);
 			
 		}
 		
