@@ -38,21 +38,21 @@ public class JblasSVD {
 	
 	public static DoubleMatrix pca(DoubleMatrix A, int dim) {
 		
-		visual("A", A);
+//		visual("A", A);
 		
 		DoubleMatrix[] usv = Singular.fullSVD(A);
 		DoubleMatrix U = usv[0];
 		DoubleMatrix S = usv[1];
-		DoubleMatrix V = usv[2];
+//		DoubleMatrix V = usv[2];
 		
 		// reduce last 'n' elements of diagonal S...
 		int n = S.length - dim;
 		for(int i=0; i<n; i++)
 			S.put(S.length - 1 - i, 0d);
 		
-		visual("U", U);
-		visual("S", S);
-		visual("V", V);
+//		visual("U", U);
+//		visual("S", S);
+//		visual("V", V);
 		
 		// build S matrix
 		DoubleMatrix Sm = new DoubleMatrix(S.length, S.length + 1);
