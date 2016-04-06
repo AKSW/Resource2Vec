@@ -60,7 +60,7 @@ public class JblasSVD {
 		DoubleMatrix B = U.mmul(Sm);
 		// ...and its column rank
 		int r = colRank(B);
-		System.out.println("col_rank = "+r);
+//		System.out.println("col_rank = "+r);
 		// keep only 'r' columns...
 		double[][] cData = new double[B.rows][r];
 		for(int i=0; i<B.rows; i++)
@@ -83,7 +83,7 @@ public class JblasSVD {
 	}
 
 	public static void visual(String name, Object o) {
-		System.out.println(name + " = " + o.toString().replace(";", "\n"));
+//		System.out.println(name + " = " + o.toString().replace(";", "\n"));
 	}
 
 	public static void visual(Logger logger, String name, Object o) {
