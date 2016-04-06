@@ -7,11 +7,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.aksw.r2v.pca.JblasSVD;
 import org.aksw.r2v.pca.PCAnalysis;
 import org.aksw.r2v.strategy.FEXStrategy;
 import org.aksw.r2v.strategy.TfidfFEXStrategy;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jblas.DoubleMatrix;
 import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLAnnotationAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLAxiom;
@@ -350,6 +352,25 @@ public class R2VModel {
 					str += (outV + ", ");
 				logger.info(str);
 			}
+			
+		}
+		
+		if(args.equals("svd")) {
+			
+			DoubleMatrix A = new DoubleMatrix(instances.size(), mp.size());
+			// fill out PCA input matrix
+			Iterator<R2VInstance> it = instances.values().iterator();
+			for(int i=0; it.hasNext(); i++) {
+				R2VInstance inst = it.next();
+				HashMap<String, Double> fsv = inst.getFlatSparseVector();
+				for(String feat : fsv.keySet())
+					A.put(i, index.get(feat), fsv.get(feat));
+			}
+			
+			logger.info("Computing PCA...");
+			DoubleMatrix C3 = JblasSVD.pca(A, 3);
+			logger.info("===== OUTPUT VECTORS =====");
+			JblasSVD.visual(logger, "C3", C3);
 			
 		}
 		
