@@ -1,5 +1,9 @@
 package org.aksw.r2v.pca;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jblas.DoubleMatrix;
@@ -21,7 +25,7 @@ public class JblasSVD {
 		for(int dim=1; dim<A[0].length; dim++) {
 			DoubleMatrix C = pca(A, dim);
 			visual("C(dim="+dim+")", C);
-			logger.info("====================");
+//			logger.info("====================");
 		}
 
 	}
@@ -87,9 +91,23 @@ public class JblasSVD {
 	}
 
 	public static void visual(String name, Object o) {
-		logger.info(name + " =");
-		for(String str : o.toString().split(";"))
-			logger.info(str);
+		
+		new File("etc/").mkdir();
+		logger.info("Saving '"+name+"' to file...");
+		
+		try {
+			PrintWriter pw = new PrintWriter(new File("etc/" + name + ".txt"));
+			for(String str : o.toString().replaceAll(", ", "\t").split(";"))
+				pw.println(str);
+			pw.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+//		logger.info(name + " =");
+//		for(String str : o.toString().split(";"))
+//			logger.info(str);
 	}
 
 }
