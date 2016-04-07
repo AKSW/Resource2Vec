@@ -107,7 +107,7 @@ public class JblasSVD {
 		}
 		
 		// calculate principal component matrix...
-		DoubleMatrix B = U.mmul(Sm);
+		DoubleMatrix B = Uk.mmul(Sm);
 		return B;
 		
 	}
