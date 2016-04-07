@@ -99,12 +99,14 @@ public class JblasSVD {
 		DoubleMatrix Uk = new DoubleMatrix(U.rows, dim);
 		for(int i=0; i<dim; i++)
 			Uk.putColumn(i, U.getColumn(i));
+		visual("Uk", Uk);
 		
 		// build S matrix
 		DoubleMatrix Sm = new DoubleMatrix(dim, dim);
 		for (int i = 0; i < dim; i++) {
 			Sm.put(i, i, S.get(i));
 		}
+		visual("Sm", Sm);
 		
 		// calculate principal component matrix...
 		DoubleMatrix B = Uk.mmul(Sm);
