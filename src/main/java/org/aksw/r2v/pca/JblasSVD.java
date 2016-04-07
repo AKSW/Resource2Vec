@@ -81,6 +81,37 @@ public class JblasSVD {
 		
 	}
 
+	
+	/**
+	 * http://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca
+	 * 
+	 * @param A
+	 * @param dim
+	 * @return
+	 */
+	public static DoubleMatrix pca2(DoubleMatrix A, int dim) {
+		
+		DoubleMatrix[] usv = Singular.fullSVD(A);
+		DoubleMatrix U = usv[0];
+		DoubleMatrix S = usv[1];
+		
+		// 
+		DoubleMatrix Uk = new DoubleMatrix(U.rows, dim);
+		for(int i=0; i<dim; i++)
+			Uk.putColumn(i, U.getColumn(i));
+		
+		// build S matrix
+		DoubleMatrix Sm = new DoubleMatrix(dim, dim);
+		for (int i = 0; i < dim; i++) {
+			Sm.put(i, i, S.get(i));
+		}
+		
+		// calculate principal component matrix...
+		DoubleMatrix B = U.mmul(Sm);
+		return B;
+		
+	}
+
 	private static int colRank(DoubleMatrix B) {
 		DoubleMatrix Bsums = B.columnSums();
 		visual("Bsums", Bsums);

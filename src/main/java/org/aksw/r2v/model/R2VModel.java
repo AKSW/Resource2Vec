@@ -366,7 +366,7 @@ public class R2VModel {
 			}
 			
 			logger.info("Computing PCA...");
-			DoubleMatrix C3 = JblasSVD.pca(A, 3);
+			DoubleMatrix C3 = JblasSVD.pca2(A, 3);
 			logger.info("===== OUTPUT VECTORS =====");
 			JblasSVD.visual("C3", C3);
 			
