@@ -13,9 +13,9 @@ public class SageVisualization {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		PrintWriter pw = new PrintWriter(new File("etc/person11_pca_scatter_plot.py"));
+		PrintWriter pw = new PrintWriter(new File("etc/person11_pca_scatter_plot_svd2.py"));
 		
-		Scanner in = new Scanner(new File("etc/C3.txt"));
+		Scanner in = new Scanner(new File("etc/svd2-C3.txt"));
 		pw.print("points = [");
 		while(in.hasNextLine()) {
 			String[] line = in.nextLine().split("\t");
