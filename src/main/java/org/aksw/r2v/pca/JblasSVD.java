@@ -15,19 +15,30 @@ import org.jblas.Singular;
  */
 public class JblasSVD {
 	
-	private static Logger logger = LogManager.getLogger(JblasSVD.class);
+	protected static Logger logger = LogManager.getLogger(JblasSVD.class);
 
 	public static void main(String[] args) {
 
-		double[][] A = { { 36, 49, 47, 11 }, { 2, 68, 27, 42 },
-				{ 42, 25, 38, 3 } };
+		int d = 5;
+		DoubleMatrix A = DoubleMatrix.randn(d, d);
 		
-		for(int dim=1; dim<A[0].length; dim++) {
+		for(int dim=1; dim<d; dim++) {
 			DoubleMatrix C = pca(A, dim);
 			visual("C(dim="+dim+")", C);
-//			logger.info("====================");
+			logger.info("====================");
 		}
 
+	}
+	
+	private static DoubleMatrix centerData(DoubleMatrix A) {
+		
+		DoubleMatrix means = A.columnMeans();
+		
+		for(int i=0; i<A.rows; i++)
+			for(int j=0; j<A.columns; j++)
+				A.put(i, j, A.get(i, j) - means.get(j));
+		
+		return A;
 	}
 	
 	public static DoubleMatrix pca(double[][] A, int n) {
@@ -36,60 +47,17 @@ public class JblasSVD {
 		
 	}
 	
-	public static DoubleMatrix pca(DoubleMatrix A, int dim) {
-		
-//		visual("A", A);
-		
-		DoubleMatrix[] usv = Singular.fullSVD(A);
-		DoubleMatrix U = usv[0];
-		DoubleMatrix S = usv[1];
-//		DoubleMatrix V = usv[2];
-		
-		// reduce last 'n' elements of diagonal S...
-		int n = S.length - dim;
-		for(int i=0; i<n; i++)
-			S.put(S.length - 1 - i, 0d);
-		
-//		visual("U", U);
-//		visual("S", S);
-//		visual("V", V);
-		
-		// build S matrix
-		DoubleMatrix Sm = new DoubleMatrix(S.length, S.length + 1);
-		for (int i = 0; i < S.length; i++) {
-			Sm.put(i, i, S.get(i));
-		}
-		
-//		DoubleMatrix Aout = U.mmul(Sm).mmul(V.transpose());
-//		visual("Aout", Aout);
-		
-		// calculate principal component matrix...
-		DoubleMatrix B = U.mmul(Sm);
-		visual("B", B);
-		// ...and its column rank
-		int r = colRank(B);
-		logger.info("col_rank = "+r);
-		// keep only 'r' columns...
-		double[][] cData = new double[B.rows][r];
-		for(int i=0; i<B.rows; i++)
-			for(int j=0; j<r; j++)
-				cData[i][j] = B.get(i, j);
-		// ...and save them in a new matrix
-		DoubleMatrix C = new DoubleMatrix(cData);
-		
-		return C;
-		
-	}
-
-	
 	/**
-	 * http://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca
+	 * 
 	 * 
 	 * @param A
 	 * @param dim
 	 * @return
 	 */
-	public static DoubleMatrix pca2(DoubleMatrix A, int dim) {
+	public static DoubleMatrix pca(DoubleMatrix A, int dim) {
+		
+		A = centerData(A);
+		visual("A", A);
 		
 		DoubleMatrix[] usv = Singular.fullSVD(A);
 		DoubleMatrix U = usv[0];
@@ -116,15 +84,6 @@ public class JblasSVD {
 		
 	}
 
-	private static int colRank(DoubleMatrix B) {
-		DoubleMatrix Bsums = B.columnSums();
-		visual("Bsums", Bsums);
-		for(int i=0; i<Bsums.length; i++)
-			if(Bsums.get(i) == 0d)
-				return i;
-		return Bsums.length;
-	}
-
 	public static void visual(String name, Object o) {
 		
 		new File("etc/").mkdir();
@@ -140,9 +99,6 @@ public class JblasSVD {
 			e.printStackTrace();
 		}
 		
-//		logger.info(name + " =");
-//		for(String str : o.toString().split(";"))
-//			logger.info(str);
 	}
 
 }
