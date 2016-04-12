@@ -11,16 +11,19 @@ import java.util.Scanner;
  */
 public class SageVisualization {
 
+	private static final int DIM = 3;
+
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		PrintWriter pw = new PrintWriter(new File("etc/person11_pca_scatter_plot_svd3.py"));
+		PrintWriter pw = new PrintWriter(new File("etc/person11/pca_scatter_plot_svd3.py"));
 		
-		Scanner in = new Scanner(new File("etc/svd3-C3.txt"));
+		Scanner in = new Scanner(new File("etc/person11/C3.csv"));
 		pw.print("points = [");
 		while(in.hasNextLine()) {
 			String[] line = in.nextLine().split("\t");
 			pw.print("(");
-			for(String val : line) {
+			for(int i=0; i<DIM; i++) {
+				String val = line[i];
 				val = val.trim();
 				if(val.startsWith("["))
 					val = val.substring(1);

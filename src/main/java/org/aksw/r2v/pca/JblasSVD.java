@@ -108,6 +108,7 @@ public class JblasSVD {
 		
 		visual("U", U);
 		visual("S", S);
+		visual("V", V);
 		
 		// n x k
 		DoubleMatrix Uk = new DoubleMatrix(U.rows, k);
@@ -138,6 +139,44 @@ public class JblasSVD {
 		return Aapprox;
 		
 	}
+	
+	/**
+	 * @param A
+	 * @param k
+	 * @return
+	 */
+	public static DoubleMatrix compress(DoubleMatrix A, int k) {
+		
+		A = centerData(A);
+		visual("A", A);
+		
+		DoubleMatrix[] usv = Singular.fullSVD(A);
+		// n x n
+		DoubleMatrix U = usv[0];
+		// n x p
+		DoubleMatrix S = usv[1];
+		// p x p (straight)
+		DoubleMatrix V = usv[2];
+		
+		visual("U", U);
+		visual("S", S);
+		visual("V", V);
+		
+		// k x k
+		DoubleMatrix Sk = new DoubleMatrix(U.columns, V.columns);
+		for (int i = 0; i < k; i++) {
+			Sk.put(i, i, S.get(i));
+		}
+		visual("Sk", Sk);
+		
+		// 
+		DoubleMatrix Aapprox = U.mmul(Sk).mmul(V.transpose());
+		visual("Aapprox", Aapprox);
+		
+		return Aapprox;
+		
+	}
+
 
 	public static void visual(String name, Object o) {
 		
