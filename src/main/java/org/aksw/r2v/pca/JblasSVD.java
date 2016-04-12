@@ -63,6 +63,9 @@ public class JblasSVD {
 		DoubleMatrix U = usv[0];
 		DoubleMatrix S = usv[1];
 		
+		visual("U", U);
+		visual("S", S);
+		
 		// 
 		DoubleMatrix Uk = new DoubleMatrix(U.rows, dim);
 		for(int i=0; i<dim; i++)
