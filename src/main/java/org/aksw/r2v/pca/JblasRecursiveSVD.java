@@ -8,9 +8,14 @@ import org.jblas.DoubleMatrix;
  */
 public class JblasRecursiveSVD extends JblasSVD {
 	
-	public static DoubleMatrix recursivePCA(DoubleMatrix A) {
+	public JblasRecursiveSVD(String dir) {
+		super(dir);
+	}
+
+	public DoubleMatrix recursivePCA(DoubleMatrix A) {
 		
 		DoubleMatrix C = A.dup();
+		
 		while(C.columns > 3) {
 			int dim = (C.columns / 2) + 1;
 			logger.info("C.col = "+C.columns);
@@ -38,7 +43,7 @@ public class JblasRecursiveSVD extends JblasSVD {
 					A[i][j] = Math.random() * 10;
 			}
 		
-		recursivePCA(new DoubleMatrix(A));
+		new JblasRecursiveSVD("recursive").recursivePCA(new DoubleMatrix(A));
 
 	}
 

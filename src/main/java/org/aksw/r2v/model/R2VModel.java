@@ -381,13 +381,11 @@ public class R2VModel {
 			}
 			
 			logger.info("Computing PCA...");
-			DoubleMatrix C3 = 
-//					JblasSVD.pca(A, 3);
-//					JblasSVD.reconstruct(A, 3);
-					JblasSVD.compress(A, 3);
-			logger.info("===== OUTPUT VECTORS =====");
-			JblasSVD.visual("C3", C3);
-			
+			new JblasSVD("pca").pca(A, 3);
+			new JblasSVD("rec").reconstruct(A, 3);
+			new JblasSVD("rec2").reconstruct2(A, 3);
+			new JblasSVD("com").compress(A, 3);
+						
 		} else {
 			
 			logger.error("Argument not understood: "+args);
