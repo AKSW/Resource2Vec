@@ -1,5 +1,8 @@
 package org.aksw.r2v.model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -11,6 +14,7 @@ import org.aksw.r2v.pca.JblasSVD;
 import org.aksw.r2v.pca.PCAnalysis;
 import org.aksw.r2v.strategy.FEXStrategy;
 import org.aksw.r2v.strategy.TfidfFEXStrategy;
+import org.aksw.r2v.visual.SageVisualization;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jblas.DoubleMatrix;
@@ -371,6 +375,14 @@ public class R2VModel {
 		} else if(args.equals("jblas-svd")) {
 			
 			DoubleMatrix A = new DoubleMatrix(instances.size(), mp.size());
+			
+			PrintWriter pw = null;
+			try {
+				pw = new PrintWriter(new File("etc/labels.txt"));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			
 			// fill out PCA input matrix
 			Iterator<R2VInstance> it = instances.values().iterator();
 			for(int i=0; it.hasNext(); i++) {
@@ -378,14 +390,26 @@ public class R2VModel {
 				HashMap<String, Double> fsv = inst.getFlatSparseVector();
 				for(String feat : fsv.keySet())
 					A.put(i, index.get(feat), fsv.get(feat));
+				if(pw != null)
+					pw.println(inst.getUri().substring(1, inst.getUri().length() - 1));
 			}
+			if(pw != null)
+				pw.close();
 			
 			logger.info("Computing PCA...");
-			new JblasSVD("pca").pca(A, 3);
+//			new JblasSVD("pca").pca(A, 3);
 			new JblasSVD("rec").reconstruct(A, 3);
-			new JblasSVD("rec2").reconstruct2(A, 3);
-			new JblasSVD("com").compress(A, 3);
-						
+//			new JblasSVD("rec2").reconstruct2(A, 3);
+//			new JblasSVD("com").compress(A, 3);
+			
+			logger.info("Generating SAGE script...");
+			try {
+				SageVisualization.run("etc/rec/C3.csv", "etc/rec/pca_scatter_plot_rec.py");
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+									
 		} else {
 			
 			logger.error("Argument not understood: "+args);

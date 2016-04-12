@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+import org.aksw.r2v.visual.SageVisualization;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jblas.DoubleMatrix;
@@ -28,8 +29,15 @@ public class JblasSVD {
 		
 		for(int dim=1; dim<d; dim++) {
 			DoubleMatrix C = svd.pca(A, dim);
-			svd.visual("C(dim="+dim+")", C);
+			svd.visual("C"+dim, C);
 			logger.info("====================");
+		}
+		
+		try {
+			SageVisualization.run("etc/asd/C3.csv", "etc/asd/plot.py");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}
@@ -65,6 +73,8 @@ public class JblasSVD {
 	 * @return
 	 */
 	public DoubleMatrix pca(DoubleMatrix A, int dim) {
+		
+		logger.info("Type 'pca' started...");
 		
 		A = centerData(A);
 		visual("A", A);
@@ -105,6 +115,8 @@ public class JblasSVD {
 	 */
 	public DoubleMatrix reconstruct(DoubleMatrix A, int k) {
 		
+		logger.info("Type 'reconstruct' started...");
+
 		A = centerData(A);
 		visual("A", A);
 		
@@ -160,6 +172,8 @@ public class JblasSVD {
 	 */
 	public DoubleMatrix compress(DoubleMatrix A, int k) {
 		
+		logger.info("Type 'compress' started...");
+
 		A = centerData(A);
 		
 		DoubleMatrix[] usv = Singular.fullSVD(A);
@@ -186,6 +200,8 @@ public class JblasSVD {
 	
 	public DoubleMatrix reconstruct2(DoubleMatrix A, int k) {
 		
+		logger.info("Type 'reconstruct2' started...");
+
 		A = centerData(A);
 		visual("A", A);
 		
@@ -235,7 +251,7 @@ public class JblasSVD {
 				for(int j=0; j<o.columns; j++) {
 					pw.print(o.get(i, j));
 					if(j < o.columns - 1)
-						pw.print(", ");
+						pw.print("\t");
 				}
 				pw.println();
 			}
