@@ -86,6 +86,58 @@ public class JblasSVD {
 		return B;
 		
 	}
+	
+	
+	/**
+	 * @param A
+	 * @param k
+	 * @return
+	 */
+	public static DoubleMatrix reconstruct(DoubleMatrix A, int k) {
+		
+		A = centerData(A);
+		visual("A", A);
+		
+		DoubleMatrix[] usv = Singular.fullSVD(A);
+		// n x n
+		DoubleMatrix U = usv[0];
+		// n x p
+		DoubleMatrix S = usv[1];
+		// p x p (straight)
+		DoubleMatrix V = usv[2];
+		
+		visual("U", U);
+		visual("S", S);
+		
+		// n x k
+		DoubleMatrix Uk = new DoubleMatrix(U.rows, k);
+		for(int i=0; i<k; i++)
+			Uk.putColumn(i, U.getColumn(i));
+		visual("Uk", Uk);
+		
+		// k x k
+		DoubleMatrix Sk = new DoubleMatrix(k, k);
+		for (int i = 0; i < k; i++) {
+			Sk.put(i, i, S.get(i));
+		}
+		visual("Sk", Sk);
+		
+		// p x k (straight)
+		DoubleMatrix Vk = new DoubleMatrix(A.columns, k);
+		for (int i = 0; i < k; i++) {
+			Vk.putRow(i, V.getRow(i));
+		}
+		visual("Vk", Vk);
+ 		
+		// 
+		DoubleMatrix Aapprox = Uk.mmul(Sk).mmul(Vk.transpose());
+		visual("Aapprox", Aapprox);
+		
+//		DoubleMatrix Areduced = new DoubleMatrix()
+		
+		return Aapprox;
+		
+	}
 
 	public static void visual(String name, Object o) {
 		
@@ -93,8 +145,8 @@ public class JblasSVD {
 		logger.info("Saving '"+name+"' to file...");
 		
 		try {
-			PrintWriter pw = new PrintWriter(new File("etc/" + name + ".txt"));
-			for(String str : o.toString().replaceAll(", ", "\t").split(";"))
+			PrintWriter pw = new PrintWriter(new File("etc/" + name + ".csv"));
+			for(String str : o.toString().replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(", ", "\t").split(";"))
 				pw.println(str);
 			pw.close();
 		} catch (FileNotFoundException e) {

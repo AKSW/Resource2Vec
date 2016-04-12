@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:dbo="http://dbpedia.org/ontology/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dbp="http://dbpedia.org/property/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:prov="http://www.w3.org/ns/prov#" >
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Alfred_Worden">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Deke_Slayton">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/James_H._Newman">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Rusty_Schweickart">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/John_M._Fabian">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Boris_Andreyev_(cosmonaut)">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Charles_Bassett">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Dominic_A._Antonelli">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/James_A._Abrahamson">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Albert_H._Crews">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Henry_C._Gordon">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Russell_L._Rogers">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/James_W._Wood">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Edward_Givens">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Andriyan_Nikolayev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Boris_Yegorov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Oleg_Grigoryevich_Makarov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Pavel_Popovich">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Svetlana_Savitskaya">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Valeri_Kubasov">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Valery_Bykovsky">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yang_Liwei">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Valentin_Lebedev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vitaly_Zholobov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Astronaut_(disambiguation)">
+    <dbo:wikiPageDisambiguates rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vyacheslav_Zudov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksandr_Laveykin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Donald_Holmquest">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Pyotr_Klimuk">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Frank_Borman">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Alan_Shepard">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Buzz_Aldrin">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Elliot_See">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Roberta_Bondar">
+    <dbp:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Sonny_Carter">
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/William_Anders">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimir_Dzhanibekov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Iven_Carl_Kincheloe,_Jr.">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/John_B._McKay">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Joseph_P._Kerwin">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Michael_Fincke">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Viktor_Gorbatko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/David_Scott">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Georgy_Grechko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Liu_Boming_(astronaut)">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Samantha_Cristoforetti">
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbp:currentOccupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Edgar_Mitchell">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Musa_Manarov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Michael_J._Adams">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Anatoly_Berezovoy">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Igor_Volk">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Leonid_Kizim">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Sergei_Avdeyev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vasily_Tsibliyev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimir_Lyakhov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Major_Tom">
+    <dbp:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksandr_Aleksandrovich_Volkov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Anatoly_Artsebarsky">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Clayton_Anderson">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksey_Ovchinin">
+    <dbp:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Anousheh_Ansari">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vasily_Lazarev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Scott_Altman">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Talgat_Musabayev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Thomas_Akers">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yuri_Malenchenko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/C._Gordon_Fullerton">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Joseph_P._Allen">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Kent_Rominger">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Gennadi_Sarafanov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Lev_Dyomin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yury_Artyukhin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksei_Gubarev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Daniel_C._Burbank">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Donald_H._Peterson">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Jeffrey_Ashby">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Jeffrey_Williams_(astronaut)">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Nikolai_Budarin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Robert_A._Parker">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimir_Kovalyonok">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Anatoly_Solovyev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Richard_A._Searfoss">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Roman_Romanenko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Valeri_Tokarev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Valery_Ryumin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Karl_Gordon_Henize">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Sergei_Treshchov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yury_Usachov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimir_Dezhurov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Gennadi_Strekalov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Salizhan_Sharipov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Grigori_Nelyubov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/George_Nelson_(astronaut)">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Jerome_Apt">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/William_J._Knight">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Oleg_Atkov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Pavel_Vinogradov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Gordon_Cooper">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/William_C._McCool">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Marc_Garneau">
+    <dbp:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Michael_P._Anderson">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Pete_Conrad">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Sigma_Pi">
+    <dbp:nota rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Boris_Morukov">
+    <dbp:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/James_C._Adamson">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/James_P._Bagian">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Michael_J._Massimino">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Roy_D._Bridges,_Jr.">
+    <dbp:profession rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:profession rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Sergei_Krikalev">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimír_Remek">
+    <dbp:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksandr_Poleshchuk">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Charles_O._Hobaugh">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Frederick_D._Gregory">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Gennady_Padalka">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/List_of_Harvard_University_people">
+    <dbp:nota rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Mark_L._Polansky">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Valery_Korzun">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/List_of_Sigma_Chi_members">
+    <dbp:nota rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Pyotr_Kolodin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Hervé_Stevenin">
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Andreas_Mogensen">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Robert_Michael_White">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Thomas_Reiter">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Bill_Dana_(pilot)">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Joseph_A._Walker">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Theodore_Freeman">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Gregory_C._Johnson">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Fyodor_Yurchikhin">
+    <dbp:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksandr_Lazutkin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksandr_Pavlovich_Aleksandrov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksandr_Serebrov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Valery_Rozhdestvensky">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimir_Aksyonov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksandr_Ivanchenkov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimir_Komarov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Alan_Bean">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Michael_Collins_(astronaut)">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Alexey_Leonov">
+    <dbp:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Barry_E._Wilmore">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Don_L._Lind">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Eileen_Collins">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Eugene_Cernan">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Henry_Hartsfield">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Konstantin_Feoktistov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimir_Solovyov_(cosmonaut)">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yuri_Baturin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksei_Yeliseyev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Boris_Volynov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Georgy_Beregovoy">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Georgy_Shonin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Pavel_Belyayev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimir_Shatalov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yevgeny_Khrunov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Anatoly_Filipchenko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Nikolay_Rukavishnikov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Viktor_Patsayev">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vitaly_Sevastyanov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladislav_Volkov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Leonid_Popov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Piers_Sellers">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Charles_Camarda">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/John_S._Bull">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Jing_Haipeng">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Kenneth_Ham">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Astronaut">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+    <dct:subject rdf:resource="http://dbpedia.org/resource/Category:Astronauts" />
+    <dct:subject rdf:resource="http://dbpedia.org/resource/Category:Science_occupations" />
+    <dbo:wikiPageID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">664</dbo:wikiPageID>
+    <dbo:wikiPageRevisionID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">681200715</dbo:wikiPageRevisionID>
+    <dbo:wikiPageExternalLink rdf:resource="http://www.astronautix.com/astrogrp/phaonaut.htm" />
+    <dbo:wikiPageExternalLink rdf:resource="http://space.kursknet.ru/cosmos/english/other/stat_kk.sht" />
+    <dbo:wikiPageExternalLink rdf:resource="http://www.collectspace.com/sightings/" />
+    <dbo:wikiPageExternalLink rdf:resource="http://astronauts.nasa.gov/content/InternationalSpaceAgencies.htm" />
+    <dbo:wikiPageExternalLink rdf:resource="http://www.spacefacts.de/" />
+    <dbo:wikiPageExternalLink rdf:resource="http://ps3missionaccomplished.com/show/neil+armstrong+death" />
+    <dbo:wikiPageExternalLink rdf:resource="http://astronauts.nasa.gov/content/broch00.htm" />
+    <dbo:wikiPageExternalLink rdf:resource="http://spaceflight.nasa.gov/outreach/jobsinfo/astronaut101.html" />
+    <owl:sameAs rdf:resource="http://nl.dbpedia.org/resource/Ruimtevaarder" />
+    <owl:sameAs rdf:resource="http://wikidata.dbpedia.org/resource/Q11631" />
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q11631" />
+    <owl:sameAs rdf:resource="http://fr.dbpedia.org/resource/Astronaute" />
+    <owl:sameAs rdf:resource="http://cs.dbpedia.org/resource/Kosmonaut" />
+    <owl:sameAs rdf:resource="http://ko.dbpedia.org/resource/우주비행사" />
+    <owl:sameAs rdf:resource="http://de.dbpedia.org/resource/Raumfahrer" />
+    <owl:sameAs rdf:resource="http://eu.dbpedia.org/resource/Astronauta" />
+    <owl:sameAs rdf:resource="http://pl.dbpedia.org/resource/Kosmonauta" />
+    <owl:sameAs rdf:resource="http://rdf.freebase.com/ns/m.0htp" />
+    <owl:sameAs rdf:resource="http://id.dbpedia.org/resource/Antariksawan" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <owl:sameAs rdf:resource="http://ja.dbpedia.org/resource/宇宙飛行士" />
+    <owl:sameAs rdf:resource="http://pt.dbpedia.org/resource/Astronauta" />
+    <owl:sameAs rdf:resource="http://el.dbpedia.org/resource/Αστροναύτης" />
+    <owl:sameAs rdf:resource="http://es.dbpedia.org/resource/Astronauta" />
+    <owl:sameAs rdf:resource="http://it.dbpedia.org/resource/Astronauta" />
+    <rdfs:label xml:lang="en">Astronaut</rdfs:label>
+    <rdfs:label xml:lang="de">Raumfahrer</rdfs:label>
+    <rdfs:label xml:lang="zh">宇航员</rdfs:label>
+    <rdfs:label xml:lang="pl">Kosmonauta</rdfs:label>
+    <rdfs:label xml:lang="nl">Ruimtevaarder</rdfs:label>
+    <rdfs:label xml:lang="fr">Astronaute</rdfs:label>
+    <rdfs:label xml:lang="pt">Astronauta</rdfs:label>
+    <rdfs:label xml:lang="es">Astronauta</rdfs:label>
+    <rdfs:label xml:lang="ru">Космонавт</rdfs:label>
+    <rdfs:label xml:lang="it">Astronauta</rdfs:label>
+    <rdfs:label xml:lang="ja">宇宙飛行士</rdfs:label>
+    <rdfs:label xml:lang="ar">رائد فضاء</rdfs:label>
+    <rdfs:comment xml:lang="ar">رائد الفضاء (بالإنجليزية Astronaut) ويسمى في روسيا( Cosmonaut) هو شخص يتم تدريبه بواسطة برنامج رحلات فضائية مأهولة ليأتمر على أو يقود أو يخدم كعضو في طاقم المركبة الفضائية. في حين أن الاسم غالباً مايطلق على رواد الفضاء المحترفين, فهو يطلق أحياناً على كل من سافر إلى الفضاء من العلماء والسياسيين والصحفيين والسياح.حتى عام 2002, رعاية وتدريب رواد الفضاء كان محصورة على الحكومات فقط, إما بواسطة الجيش أو بواسطة وكالات الفضاء المدنية.</rdfs:comment>
+    <rdfs:comment xml:lang="fr">Un astronaute également connu sous l&#39;appellation de  cosmonaute ou spationaute  est le pilote ou le passager d&#39;un véhicule spatial. Le premier homme à être allé dans l&#39;espace est Youri Gagarine en 1961 ; deux ans plus tard, Valentina Terechkova devint la première femme à le faire. Les astronautes étaient choisis initialement parmi les pilotes militaires.</rdfs:comment>
+    <rdfs:comment xml:lang="es">El término astronauta designa a todo el personal de un objeto espacial, a la tripulación de una nave espacial e incluso, &quot;a toda persona que se encuentre en la luna&quot;.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Ein Raumfahrer (auch Weltraumfahrer) ist ein Teilnehmer an einer bemannten Expedition in den Weltraum. Der erste Raumfahrer war im Jahr 1961 Juri Gagarin. Je nach Raumfahrtorganisation bezeichnet man Raumfahrer auch als Astronauten (z. B. NASA, ESA, CSA, JAXA) oder Kosmonauten (Sowjetunion, Roskosmos/Russland).</rdfs:comment>
+    <rdfs:comment xml:lang="en">An astronaut (or cosmonaut) is a person trained by a human spaceflight program to command, pilot, or serve as a crew member of a spacecraft. Although generally reserved for professional space travelers, the terms are sometimes applied to anyone who travels into space, including scientists, politicians, journalists, and tourists.Starting in the 1950s up to 2002, astronauts were sponsored and trained exclusively by governments, either by the military or by civilian space agencies.</rdfs:comment>
+    <rdfs:comment xml:lang="nl">Een ruimtevaarder is een persoon die in de ruimte is of in de ruimte is geweest. In de praktijk is dat iemand die met een ruimtevaartuig of een vliegtuig door de ruimte reist of gereisd heeft.Volgens de definitie van de Amerikaanse luchtmacht begint de ruimte vanaf een hoogte van 80,5 kilometer (50 mijl), volgens de Fédération Aéronautique Internationale vanaf een hoogte van 100 kilometer.</rdfs:comment>
+    <rdfs:comment xml:lang="ja">宇宙飛行士（うちゅうひこうし、英: Astronaut、ソ連／ロシアの飛行士はコスモノート露: космонавт カスマナーフト kosmonavt、中国の飛行士は宇航員や太空人と呼ぶのが通例）は、宇宙船による大気圏外の飛行を行なうよう選ばれた人のこと。訓練を繰り返している人もいれば、普段は宇宙飛行士になる前の元の職業を続けている人、行ったのが人生最初で最後の人もいる。</rdfs:comment>
+    <rdfs:comment xml:lang="it">Un astronauta o cosmonauta è un essere umano che viaggia attivamente nello spazio o che viene trasportato da qualcosa che lo fa, soggetto primo dell&#39;esplorazione spaziale umana.I criteri per determinare il significato di &quot;viaggio nello spazio&quot; sono differenti nelle differenti culture dei singoli paesi coinvolti.</rdfs:comment>
+    <rdfs:comment xml:lang="pt">Astronauta (em inglês: astronaut), cosmonauta (em russo: космонавт, AFI: [kəsmɐˈnaft]) ou taikonauta (em chinês: 宇航员) é uma pessoa treinada para uma viagem espacial, seja para comandar, pilotar, servir como membro da tripulação de uma nave espacial ou desempenhando atividades extraveiculares.Tecnicamente considera-se astronauta todo aquele que empreenda voo sub-orbital (voo balístico, sem entrar em órbita) ou orbital de no mínimo 100 km de altitude (considerado o limite externo da atmosfera).Embora geralmente reservado para os profissionais viajantes, por vezes o termo é aplicado a qualquer pessoa que viaja no espaço, incluindo cientistas, políticos, jornalistas e turistas.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/List_of_Chinese_astronauts" />
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Astronaut_ranks" />
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/List_of_cosmonauts" />
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/List_of_spaceflight_records" />
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Positions" />
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Effect_of_spaceflight_on_the_human_body" />
+    <foaf:depiction rdf:resource="http://en.wikipedia.org/wiki/Special:FilePath/Astronaut-EVA.jpg" />
+    <foaf:isPrimaryTopicOf rdf:resource="http://en.wikipedia.org/wiki/Astronaut" />
+    <dbo:thumbnail rdf:resource="http://en.wikipedia.org/wiki/Special:FilePath/Astronaut-EVA.jpg?width=300" />
+    <prov:wasDerivedFrom rdf:resource="http://en.wikipedia.org/wiki/Astronaut?oldid=681200715" />
+    <dbo:abstract xml:lang="ar">رائد الفضاء (بالإنجليزية Astronaut) ويسمى في روسيا( Cosmonaut) هو شخص يتم تدريبه بواسطة برنامج رحلات فضائية مأهولة ليأتمر على أو يقود أو يخدم كعضو في طاقم المركبة الفضائية. في حين أن الاسم غالباً مايطلق على رواد الفضاء المحترفين, فهو يطلق أحياناً على كل من سافر إلى الفضاء من العلماء والسياسيين والصحفيين والسياح.حتى عام 2002, رعاية وتدريب رواد الفضاء كان محصورة على الحكومات فقط, إما بواسطة الجيش أو بواسطة وكالات الفضاء المدنية. وبعد الرحلة تحت المدارية التي قامت بها السفينة &quot;سفينة الفضاء الأولى &quot;SpaceShipOne&quot; في عام 2004 والممولة من القطاع الخاص, ظهرت فئة جديدة من رواد الفضاء وهو رواد الفضاء التجاريون.</dbo:abstract>
+    <dbo:abstract xml:lang="nl">Een ruimtevaarder is een persoon die in de ruimte is of in de ruimte is geweest. In de praktijk is dat iemand die met een ruimtevaartuig of een vliegtuig door de ruimte reist of gereisd heeft.Volgens de definitie van de Amerikaanse luchtmacht begint de ruimte vanaf een hoogte van 80,5 kilometer (50 mijl), volgens de Fédération Aéronautique Internationale vanaf een hoogte van 100 kilometer. Consequentie hiervan is dat een aantal piloten die in de periode 1962-1968 met X-15-vliegtuigen hebben gevlogen door de Amerikaanse luchtmacht als ruimtevaarders beschouwd worden. De FAI erkent deze piloten niet als ruimtevaarders, met uitzondering van Joseph Walker, die tweemaal boven de 100 kilometer uitkwam.De eerste ruimtevaarders werden op aarde geportretteerd als helden. Zij moesten lange reizen maken langs de hoofdsteden van bevriende landen, en werden veelal met gejuich onthaald. Dat had ook alles te maken met de toentertijd heersende Koude Oorlog waarbij de in de ruimtevaart behaalde successen dankbaar werden gebruikt voor propagandadoeleinden.De heldenstatus van de ruimtevaarders verminderde na het Project Apollo, mede omdat het er al zo veel werden en ook omdat het publiek het ook een beetje moe werd. Zeker met de komst van de Spaceshuttle lijkt ruimtevaart vanzelfsprekend geworden.Gelet op de opleiding die de ruimtevaarders moeten volgen, zijn het echter nog wel mensen met buitengewone kwaliteiten. Veelal zijn het piloten, later ook gepromoveerde wetenschappers die een fysiek zware training achter de rug hebben, goed van brein en leden.</dbo:abstract>
+    <dbo:abstract xml:lang="en">An astronaut (or cosmonaut) is a person trained by a human spaceflight program to command, pilot, or serve as a crew member of a spacecraft. Although generally reserved for professional space travelers, the terms are sometimes applied to anyone who travels into space, including scientists, politicians, journalists, and tourists.Starting in the 1950s up to 2002, astronauts were sponsored and trained exclusively by governments, either by the military or by civilian space agencies. With the suborbital flight of the privately funded SpaceShipOne in 2004, a new category of astronaut was created: the commercial astronaut.</dbo:abstract>
+    <dbo:abstract xml:lang="de">Ein Raumfahrer (auch Weltraumfahrer) ist ein Teilnehmer an einer bemannten Expedition in den Weltraum. Der erste Raumfahrer war im Jahr 1961 Juri Gagarin. Je nach Raumfahrtorganisation bezeichnet man Raumfahrer auch als Astronauten (z. B. NASA, ESA, CSA, JAXA) oder Kosmonauten (Sowjetunion, Roskosmos/Russland). Die chinesische Raumfahrtorganisation verwendet in englischsprachigen Berichten meistens die Bezeichnung Astronaut, hat aber auch die Bezeichnung Taikonaut für die Teilnehmer an ihren Missionen geprägt und verwendet gelegentlich auch Kosmonaut (bzw. cosmonaut). Seltenere Namen sind Spationauten (in Frankreich), Angkasawan (in Malaysia), Austronauten (ironisch in Österreich) und Vyomanaut oder Wiomanaut (in Indien).</dbo:abstract>
+    <dbo:abstract xml:lang="es">El término astronauta designa a todo el personal de un objeto espacial, a la tripulación de una nave espacial e incluso, &quot;a toda persona que se encuentre en la luna&quot;. A los viajeros espaciales soviéticos o entrenados en la Unión Soviética y, actualmente, en Rusia, se les denomina normalmente cosmonautas y a los de la República Popular China o entrenados por ellos, taikonautas.El término cosmonauta proviene del término ruso kosmonavt (космонавт), que a su vez se deriva de las palabras griegas kosmos (κοσμος, universo) y nautes (ναύτης, navegante).El término taikonauta es un neologismo formado a partir del término chino 太空 (tàikōng, espacio) y del griego ναύτης (nautes, navegante) en semejanza con astronauta y cosmonauta que derivan del griego. La palabra oficial china que designa a un astronauta es 宇航員 (yǔhángyuán) pero el término taikonauta fue propuesto por Chiew Lee Yih en mayo de 1998 en Internet y se aceptó rápidamente en el mundo anglosajón.</dbo:abstract>
+    <dbo:abstract xml:lang="it">Un astronauta o cosmonauta è un essere umano che viaggia attivamente nello spazio o che viene trasportato da qualcosa che lo fa, soggetto primo dell&#39;esplorazione spaziale umana.I criteri per determinare il significato di &quot;viaggio nello spazio&quot; sono differenti nelle differenti culture dei singoli paesi coinvolti. Negli Stati Uniti sono considerati astronauti coloro che superano un&#39;altitudine di 50 miglia (circa 80 km), in Russia per volo spaziale si intende una traiettoria orbitale (orbita geocentrica) ovvero che la macchina debba fare almeno un giro attorno alla Terra. La Federazione Internazionale Aeronautica (FAI) invece definisce voli spaziali quelli che superano i 100 km; per questo motivo il numero totale di astronauti differisce da fonte a fonte. Al 20 giugno 2011 un totale di 529 persone sono andate nello spazio, secondo la definizione americana, dove hanno totalizzato oltre 30 000 giorni, inclusi più di 100 giorni di passeggiate spaziali. Alla stessa data sono invece 523 gli &quot;astronauti&quot; secondo la FAI. Le persone che ad oggi hanno effettuato viaggi nello spazio provengono da 38 paesi.</dbo:abstract>
+    <dbo:abstract xml:lang="fr">Un astronaute également connu sous l&#39;appellation de  cosmonaute ou spationaute  est le pilote ou le passager d&#39;un véhicule spatial. Le premier homme à être allé dans l&#39;espace est Youri Gagarine en 1961 ; deux ans plus tard, Valentina Terechkova devint la première femme à le faire. Les astronautes étaient choisis initialement parmi les pilotes militaires. Les critères de recrutement ont évolué par la suite et, si une bonne condition physique est toujours nécessaire, l&#39;accent est désormais mis sur l&#39;équilibre psychologique, la compétence technique ou scientifique selon le poste occupé et la capacité à s&#39;exprimer dans les langues des principales nations spatiales (anglais, russe). Voler dans l&#39;espace reste encore un privilège rare puisque après 50 ans d&#39;activité spatiale seules un peu plus de 500 personnes ont séjourné dans l&#39;espace, en moyenne à deux reprises, dont une cinquantaine de femmes.L&#39;usage veut que le terme astronaute soit utilisé de préférence pour les personnes effectuant un séjour dans l&#39;espace à bord de véhicules spatiaux lancés par les États-Unis d&#39;Amérique, que le terme cosmonaute soit plutôt réservé aux navigateurs de l&#39;espace originaires d&#39;Union soviétique ou de Russie et que le terme spationaute soit utilisé pour les citoyens français.</dbo:abstract>
+    <dbo:abstract xml:lang="pt">Astronauta (em inglês: astronaut), cosmonauta (em russo: космонавт, AFI: [kəsmɐˈnaft]) ou taikonauta (em chinês: 宇航员) é uma pessoa treinada para uma viagem espacial, seja para comandar, pilotar, servir como membro da tripulação de uma nave espacial ou desempenhando atividades extraveiculares.Tecnicamente considera-se astronauta todo aquele que empreenda voo sub-orbital (voo balístico, sem entrar em órbita) ou orbital de no mínimo 100 km de altitude (considerado o limite externo da atmosfera).Embora geralmente reservado para os profissionais viajantes, por vezes o termo é aplicado a qualquer pessoa que viaja no espaço, incluindo cientistas, políticos, jornalistas e turistas.</dbo:abstract>
+    <dbo:abstract xml:lang="ja">宇宙飛行士（うちゅうひこうし、英: Astronaut、ソ連／ロシアの飛行士はコスモノート露: космонавт カスマナーフト kosmonavt、中国の飛行士は宇航員や太空人と呼ぶのが通例）は、宇宙船による大気圏外の飛行を行なうよう選ばれた人のこと。訓練を繰り返している人もいれば、普段は宇宙飛行士になる前の元の職業を続けている人、行ったのが人生最初で最後の人もいる。</dbo:abstract>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Neil_Armstrong">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Cosmonaut">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Edward_Higgins_White">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Gus_Grissom">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Roger_B._Chaffee">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Toktar_Aubakirov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Bryan_D._O&#39;Connor">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Gherman_Titov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Paul_J._Weitz">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Robert_Crippen">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yuri_Gidzenko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksandr_Nikolayevich_Balandin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yury_Glazkov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yury_Lonchakov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Mars_Rafikov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Brent_W._Jett,_Jr.">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Donn_F._Eisele">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Edward_Gibson">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Frank_L._Culbertson,_Jr.">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Gerald_P._Carr">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/James_McDivitt">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Ken_Mattingly">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Kenneth_D._Cameron">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Kevin_P._Chilton">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Michael_J._McCulley">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Richard_F._Gordon,_Jr.">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Ronald_Evans_(astronaut)">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Steven_R._Nagel">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Walter_Cunningham">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/William_R._Pogue">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yury_Onufriyenko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Bruce_McCandless_II">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Charles_Duke">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/David_M._Walker_(astronaut)">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Fred_Haise">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Jack_R._Lousma">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/James_Irwin">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/James_van_Hoften">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Jim_Wetherbee">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Joe_Engle">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Jon_McBride">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Karol_J._Bobko">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Owen_K._Garriott">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Richard_N._Richards">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Robert_F._Overmyer">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Robert_L._Gibson">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Robert_Thirsk">
+    <dbp:rank rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Scott_Carpenter">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Stuart_Roosa">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vance_D._Brand">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Wally_Schirra">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/William_B._Lenoir">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/William_Shepherd">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/List_of_Naked_Science_episodes">
+    <dbp:title rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Jeff_Tracy">
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Richard_R._Arnold">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Brewster_H._Shaw">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Clifton_Williams">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Engineer">
+    <dbp:relatedOccupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Howard_Wolowitz">
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/John_Young_(astronaut)">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Mikhail_Rasputin">
+    <dbp:alliances rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Story_Musgrave">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Thomas_P._Stafford">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Christer_Fuglesang">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Robert_A._Rushworth">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Valentin_Bondarenko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Mikhail_Tyurin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yury_Romanenko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Aleksandr_Aleksandrovich_Skvortsov">
+    <dbp:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Anatoli_Levchenko">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Nicole_Stott">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Cosmonaut_(disambiguation)">
+    <dbo:wikiPageDisambiguates rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vladimir_Vasyutin">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Randolph_Bresnik">
+    <dbp:shortDescription rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://en.wikipedia.org/wiki/Astronaut">
+    <foaf:primaryTopic rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/List_of_Delta_Upsilon_brothers">
+    <dbp:nota rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Spationauts">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Taikonauts">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Taikonaut">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Kosmonaut">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Molly_Woods">
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Anton_Shkaplerov">
+    <dbo:type rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Oleg_Skripochka">
+    <dbp:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+    <dbo:occupation rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Space_traveller">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Astronauts">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yuhangyuan">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Yǔhángyuán">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Spationaut">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Gaganaut">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Rednaut">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Spacemen">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Vyomanaut">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Taikanaut">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Kosmonavt">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Tychonaut">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Taikong_Ren">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Taikongren">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/resource/Tàikōngrén">
+    <dbo:wikiPageRedirects rdf:resource="http://dbpedia.org/resource/Astronaut" />
+  </rdf:Description>
+</rdf:RDF>
