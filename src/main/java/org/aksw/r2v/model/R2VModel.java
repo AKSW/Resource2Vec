@@ -397,14 +397,16 @@ public class R2VModel {
 				pw.close();
 			
 			logger.info("Computing PCA...");
-//			new JblasSVD("pca").pca(A, 3);
-			new JblasSVD("rec").reconstruct(A, 3);
+			JblasSVD pca = new JblasSVD("pca");
+			DoubleMatrix B = pca.pca(A, 3); // TODO cubify in [0,1]^n
+			pca.cubify(B, "C3"); 
+//			new JblasSVD("rec").reconstruct(A, 3);
 //			new JblasSVD("rec2").reconstruct2(A, 3);
 //			new JblasSVD("com").compress(A, 3);
 			
 			logger.info("Generating SAGE script...");
 			try {
-				SageVisualization.run("etc/rec/C3.csv", "etc/rec/pca_scatter_plot_rec.py");
+				SageVisualization.run("etc/pca/C3.csv", "etc/pca/pca_scatter_plot_rec.py");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

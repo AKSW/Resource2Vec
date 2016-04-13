@@ -13,14 +13,17 @@ import java.util.Scanner;
 public class SageVisualization {
 
 	private static final int DIM = 3;
+	private static final String NAMESPACE = "http://dbpedia.org/resource/";
+	private static final Double TEXT_Z_OFFSET = 0.03;
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		run("etc/person11-akswnc9/rec/C3.csv", "etc/person11/pca_scatter_plot_rec.py");
+		run("etc/pca/C3.csv", "etc/pca/pca_scatter_plot_rec.py");
 		
 	}
 	
 	public static void run(String input, String output) throws FileNotFoundException {
+		
 		
 		PrintWriter pw = new PrintWriter(new File(output));
 		
@@ -31,12 +34,16 @@ public class SageVisualization {
 		lab.close();
 		
 		StringBuffer sb = new StringBuffer();
+		StringBuffer pt = new StringBuffer();
 		
 		Scanner in = new Scanner(new File(input));
 		pw.print("points = [");
 		for(int r=0; in.hasNextLine(); r++) {
+			String uri = uris.get(r);
 			String[] line = in.nextLine().split("\t");
-			String coord = "(";
+			if(!uri.startsWith(NAMESPACE))
+				continue;
+			String coord = "(", textCoord = "(";
 			for(int i=0; i<DIM; i++) {
 				String val = line[i].trim();
 				if(val.startsWith("["))
@@ -44,21 +51,24 @@ public class SageVisualization {
 				if(val.endsWith("]"))
 					val = val.substring(0, val.length() - 1);
 				Double d = Double.parseDouble(val);
+				if(i == 2) // write names slightly below
+					textCoord += (d - TEXT_Z_OFFSET) + ",";
+				else
+					textCoord += d + ",";
 				coord += d + ",";
 			}
 			coord += ")";
+			textCoord += ")";
 			pw.println(coord + ",");
-			sb.append("t"+r+" = text3d(\""+uris.get(r)+"\", "+coord+", color=(0.5,0,0))\n");
+			sb.append("t"+r+" = text3d(\""+uri.substring(NAMESPACE.length())+"\", "+textCoord+", color=(0.5,0,0))\n");
+			pt.append(" + t" + r);
 		}
 		in.close();
 
 		pw.println("]");
 		pw.println(sb.toString());
 		pw.println("p = point3d(points,size=10,color='blue')");
-		String s = "show(p";
-		for(int i=0; i<uris.size(); i++)
-			s += " + t" + i;
-		pw.println(s + ")");
+		pw.println("(p" + pt.toString() + ").show(xmin=0, xmax=1, ymin=0, ymax=1, zmin=0, zmax=1)");
 		
 		pw.close();
 		

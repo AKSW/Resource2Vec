@@ -148,7 +148,7 @@ public class JblasSVD {
 		// p x k (straight)
 		DoubleMatrix Vk = new DoubleMatrix(A.columns, k);
 		for (int i = 0; i < k; i++) {
-			Vk.putRow(i, V.getRow(i));
+			Vk.putColumn(i, V.getColumn(i));
 		}
 		visual("Vk", Vk);
  		
@@ -227,10 +227,10 @@ public class JblasSVD {
 		}
 		visual("Sk", Sm);
 		
-		for (int i = k; i < V.rows; i++) {
-			V.putRow(i, DoubleMatrix.zeros(1, V.columns));
-		}
-		visual("Vk", V);
+//		for (int i = k; i < V.rows; i++) {
+//			V.putColumn(i, DoubleMatrix.zeros(1, V.columns));
+//		}
+//		visual("Vk", V);
  		
 		// 
 		DoubleMatrix Aapprox = U.mmul(Sm).mmul(V.transpose());
@@ -261,6 +261,27 @@ public class JblasSVD {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public void cubify(DoubleMatrix A, String outname) {
+		
+		DoubleMatrix B = new DoubleMatrix(A.rows, A.columns);
+		DoubleMatrix max = A.columnMaxs();
+		DoubleMatrix min = A.columnMins();
+		
+		
+		for(int j=0; j<B.columns; j++) {
+			double mx = max.get(j);
+			double mn = min.get(j);
+			if(mx == mn) {
+				B.putColumn(j, DoubleMatrix.zeros(A.rows, 1));
+				continue;
+			}
+			for(int i=0; i<B.rows; i++)
+				B.put(i, j, (A.get(i, j) - mn) / (mx - mn));
+		}
+		
+		visual(outname, B);
 	}
 
 }
