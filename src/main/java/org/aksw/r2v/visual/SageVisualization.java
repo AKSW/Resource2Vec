@@ -13,17 +13,15 @@ import java.util.Scanner;
 public class SageVisualization {
 
 	private static final int DIM = 3;
-	private static final String NAMESPACE = "http://dbpedia.org/resource/";
 	private static final Double TEXT_Z_OFFSET = 0.03;
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		run("etc/pca/C3.csv", "etc/pca/pca_scatter_plot_rec.py");
+		run("etc/pca/C3.csv", "etc/pca/pca_scatter_plot.py", "http://dbpedia.org/resource/");
 		
 	}
 	
-	public static void run(String input, String output) throws FileNotFoundException {
-		
+	public static void run(String input, String output, String namespace) throws FileNotFoundException {
 		
 		PrintWriter pw = new PrintWriter(new File(output));
 		
@@ -41,7 +39,7 @@ public class SageVisualization {
 		for(int r=0; in.hasNextLine(); r++) {
 			String uri = uris.get(r);
 			String[] line = in.nextLine().split("\t");
-			if(!uri.startsWith(NAMESPACE))
+			if(!uri.startsWith(namespace))
 				continue;
 			String coord = "(", textCoord = "(";
 			for(int i=0; i<DIM; i++) {
@@ -60,7 +58,7 @@ public class SageVisualization {
 			coord += ")";
 			textCoord += ")";
 			pw.println(coord + ",");
-			sb.append("t"+r+" = text3d(\""+uri.substring(NAMESPACE.length())+"\", "+textCoord+", color=(0.5,0,0))\n");
+			sb.append("t"+r+" = text3d(\""+uri.substring(namespace.length())+"\", "+textCoord+", color=(0.5,0,0))\n");
 			pt.append(" + t" + r);
 		}
 		in.close();

@@ -34,7 +34,7 @@ public class JblasSVD {
 		}
 		
 		try {
-			SageVisualization.run("etc/asd/C3.csv", "etc/asd/plot.py");
+			SageVisualization.run("etc/asd/C3.csv", "etc/asd/plot.py", "http://dbpedia.org/resource/");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,11 +74,12 @@ public class JblasSVD {
 	 */
 	public DoubleMatrix pca(DoubleMatrix A, int dim) {
 		
-		logger.info("Type 'pca' started...");
+		logger.info("Type 'pca' started.");
 		
 		A = centerData(A);
 		visual("A", A);
 		
+		logger.info("Computing SVD...");
 		DoubleMatrix[] usv = Singular.fullSVD(A);
 		DoubleMatrix U = usv[0];
 		DoubleMatrix S = usv[1];
@@ -87,20 +88,23 @@ public class JblasSVD {
 		visual("S", S);
 		
 		// 
+		logger.info("Reducing U to Uk...");
 		DoubleMatrix Uk = new DoubleMatrix(U.rows, dim);
 		for(int i=0; i<dim; i++)
 			Uk.putColumn(i, U.getColumn(i));
 		visual("Uk", Uk);
 		
 		// build S matrix
-		DoubleMatrix Sm = new DoubleMatrix(dim, dim);
+		logger.info("Reducing S to Sk...");
+		DoubleMatrix Sk = new DoubleMatrix(dim, dim);
 		for (int i = 0; i < dim; i++) {
-			Sm.put(i, i, S.get(i));
+			Sk.put(i, i, S.get(i));
 		}
-		visual("Sm", Sm);
+		visual("Sk", Sk);
 		
 		// calculate principal component matrix...
-		DoubleMatrix B = Uk.mmul(Sm);
+		logger.info("Computing principal components...");
+		DoubleMatrix B = Uk.mmul(Sk);
 		visual("B", B);
 		
 		return B;
@@ -263,13 +267,14 @@ public class JblasSVD {
 		
 	}
 
-	public void cubify(DoubleMatrix A, String outname) {
+	public void normalize(DoubleMatrix A, String outname) {
 		
 		DoubleMatrix B = new DoubleMatrix(A.rows, A.columns);
 		DoubleMatrix max = A.columnMaxs();
 		DoubleMatrix min = A.columnMins();
 		
-		
+		logger.info("Normalizing hypercube into [0,1]^n...");
+
 		for(int j=0; j<B.columns; j++) {
 			double mx = max.get(j);
 			double mn = min.get(j);

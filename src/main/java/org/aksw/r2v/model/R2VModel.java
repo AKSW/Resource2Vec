@@ -323,12 +323,12 @@ public class R2VModel {
 	}
 
 	/**
-	 * @param args 
+	 * @param ttype 
 	 * 
 	 */
-	public void reduce(String args) {
+	public void reduce(String ttype, String namespace) {
 		
-		logger.info("Starting dimensionality reduction with argument = '"+args+"'...");
+		logger.info("Starting dimensionality reduction with argument = '"+ttype+"'...");
 		
 		HashMap<String, Double> mp = getMeanPoint();
 		// assign an integer index to each feature
@@ -338,11 +338,11 @@ public class R2VModel {
 			index.put(feat, j++);
 		
 		String mkobos = "mkobos-";
-		if(args.startsWith(mkobos)) {
+		if(ttype.startsWith(mkobos)) {
 			
 			TransformationType type;
 			try {
-				type = TransformationType.valueOf(args.substring(7).toUpperCase());
+				type = TransformationType.valueOf(ttype.substring(7).toUpperCase());
 			} catch (IllegalArgumentException e) {
 				logger.error("Unknown transformation type. Allowed: rotation, whitening.");
 				return;
@@ -372,7 +372,7 @@ public class R2VModel {
 				logger.info(str);
 			}
 			
-		} else if(args.equals("jblas-svd")) {
+		} else if(ttype.equals("jblas-svd")) {
 			
 			DoubleMatrix A = new DoubleMatrix(instances.size(), mp.size());
 			
@@ -396,17 +396,17 @@ public class R2VModel {
 			if(pw != null)
 				pw.close();
 			
-			logger.info("Computing PCA...");
-			JblasSVD pca = new JblasSVD("pca");
-			DoubleMatrix B = pca.pca(A, 3); // TODO cubify in [0,1]^n
-			pca.cubify(B, "C3"); 
-//			new JblasSVD("rec").reconstruct(A, 3);
-//			new JblasSVD("rec2").reconstruct2(A, 3);
-//			new JblasSVD("com").compress(A, 3);
+			String dir = "run_"+(int)(Math.random() * 100000);
+			logger.info("Current directory: ./etc/"+dir+"/");
+			JblasSVD pca = new JblasSVD(dir);
+			DoubleMatrix B = pca.pca(A, 3);
+			// normalize into [0,1]^n
+			pca.normalize(B, "C3");
 			
-			logger.info("Generating SAGE script...");
+			logger.info("Generating SAGE script within namespace '"+namespace+"'...");
 			try {
-				SageVisualization.run("etc/pca/C3.csv", "etc/pca/pca_scatter_plot_rec.py");
+				SageVisualization.run("etc/"+dir+"/C3.csv", "etc/"+dir+"/pca_scatter_plot.py",
+						namespace);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -414,7 +414,7 @@ public class R2VModel {
 									
 		} else {
 			
-			logger.error("Argument not understood: "+args);
+			logger.error("Argument not understood: "+ttype);
 			
 		}
 		

@@ -20,7 +20,8 @@ public class R2VMain {
 		
 		logger.info(model.info());
 
-		model.reduce(args[1]);
+		String ns = (args.length == 3) ? args[2] : null;
+		model.reduce(args[1], ns);
 
 	}
 

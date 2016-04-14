@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.aksw.r2v</groupId>
 	<artifactId>resource2vec</artifactId>
-	<version>0.2.3</version>
+	<version>0.2.4</version>
 	<name>Resource2Vec</name>
 	<description>Resource2Vec is a knowledge graph embedding model for RDF graphs.</description>
 	<build>
