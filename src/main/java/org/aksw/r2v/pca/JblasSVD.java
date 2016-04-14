@@ -34,7 +34,7 @@ public class JblasSVD {
 		}
 		
 		try {
-			SageVisualization.run("etc/asd/C3.csv", "etc/asd/plot.py", "http://dbpedia.org/resource/");
+			SageVisualization.run("asd", "http://dbpedia.org/resource/");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

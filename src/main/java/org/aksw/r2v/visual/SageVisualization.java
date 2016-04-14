@@ -17,24 +17,27 @@ public class SageVisualization {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		run("etc/pca/C3.csv", "etc/pca/pca_scatter_plot.py", "http://dbpedia.org/resource/");
+//		run("etc/pca/C3.csv", "etc/pca/pca_scatter_plot.py", "http://dbpedia.org/resource/");
+		run("person12", "http://www.okkam.org/oaie/person2-");
 		
 	}
 	
-	public static void run(String input, String output, String namespace) throws FileNotFoundException {
+	public static void run(String dir, String namespace) throws FileNotFoundException {
 		
-		PrintWriter pw = new PrintWriter(new File(output));
+		PrintWriter pw = new PrintWriter(new File("etc/"+dir+"/pca_scatter_plot.py"));
 		
 		ArrayList<String> uris = new ArrayList<>();
-		Scanner lab = new Scanner(new File("etc/labels.txt"));
+		Scanner lab = new Scanner(new File("etc/"+dir+"/labels.txt"));
 		while(lab.hasNextLine())
 			uris.add(lab.nextLine());
 		lab.close();
 		
 		StringBuffer sb = new StringBuffer();
 		StringBuffer pt = new StringBuffer();
+	
+		PrintWriter labOut = new PrintWriter(new File("etc/"+dir+"/labels_out.txt"));
 		
-		Scanner in = new Scanner(new File(input));
+		Scanner in = new Scanner(new File("etc/"+dir+"/C3.csv"));
 		pw.print("points = [");
 		for(int r=0; in.hasNextLine(); r++) {
 			String uri = uris.get(r);
@@ -60,8 +63,11 @@ public class SageVisualization {
 			pw.println(coord + ",");
 			sb.append("t"+r+" = text3d(\""+uri.substring(namespace.length())+"\", "+textCoord+", color=(0.5,0,0))\n");
 			pt.append(" + t" + r);
+			labOut.println(uri);
 		}
 		in.close();
+		
+		labOut.close();
 
 		pw.println("]");
 		pw.println(sb.toString());

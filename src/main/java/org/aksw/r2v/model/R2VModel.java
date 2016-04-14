@@ -376,9 +376,12 @@ public class R2VModel {
 			
 			DoubleMatrix A = new DoubleMatrix(instances.size(), mp.size());
 			
+			String dir = "run_"+(int)(Math.random() * 100000);
+			logger.info("Current directory: ./etc/"+dir+"/");
+			JblasSVD pca = new JblasSVD(dir);
 			PrintWriter pw = null;
 			try {
-				pw = new PrintWriter(new File("etc/labels.txt"));
+				pw = new PrintWriter(new File("etc/"+dir+"/labels.txt"));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
@@ -396,17 +399,13 @@ public class R2VModel {
 			if(pw != null)
 				pw.close();
 			
-			String dir = "run_"+(int)(Math.random() * 100000);
-			logger.info("Current directory: ./etc/"+dir+"/");
-			JblasSVD pca = new JblasSVD(dir);
 			DoubleMatrix B = pca.pca(A, 3);
 			// normalize into [0,1]^n
 			pca.normalize(B, "C3");
 			
 			logger.info("Generating SAGE script within namespace '"+namespace+"'...");
 			try {
-				SageVisualization.run("etc/"+dir+"/C3.csv", "etc/"+dir+"/pca_scatter_plot.py",
-						namespace);
+				SageVisualization.run(dir, namespace);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
