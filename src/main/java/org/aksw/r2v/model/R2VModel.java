@@ -401,7 +401,8 @@ public class R2VModel {
 			
 			DoubleMatrix B = pca.pca(A, 3);
 			// normalize into [0,1]^n
-			pca.normalize(B, "C3");
+			DoubleMatrix C3 = pca.normalize(B);
+			pca.saveAs("C3", C3);
 			
 			logger.info("Generating SAGE script within namespace '"+namespace+"'...");
 			try {

@@ -19,6 +19,15 @@ public class JblasSVD {
 	protected static Logger logger = LogManager.getLogger(JblasSVD.class);
 	
 	private String dir;
+	private boolean saveSteps = false;
+
+	public boolean isSaveSteps() {
+		return saveSteps;
+	}
+
+	public void setSaveSteps(boolean saveSteps) {
+		this.saveSteps = saveSteps;
+	}
 
 	public static void main(String[] args) {
 
@@ -29,7 +38,7 @@ public class JblasSVD {
 		
 		for(int dim=1; dim<d; dim++) {
 			DoubleMatrix C = svd.pca(A, dim);
-			svd.visual("C"+dim, C);
+			svd.save("C"+dim, C);
 			logger.info("====================");
 		}
 		
@@ -77,22 +86,22 @@ public class JblasSVD {
 		logger.info("Type 'pca' started.");
 		
 		A = centerData(A);
-		visual("A", A);
+		save("A", A);
 		
 		logger.info("Computing SVD...");
 		DoubleMatrix[] usv = Singular.fullSVD(A);
 		DoubleMatrix U = usv[0];
 		DoubleMatrix S = usv[1];
 		
-		visual("U", U);
-		visual("S", S);
+		save("U", U);
+		save("S", S);
 		
 		// 
 		logger.info("Reducing U to Uk...");
 		DoubleMatrix Uk = new DoubleMatrix(U.rows, dim);
 		for(int i=0; i<dim; i++)
 			Uk.putColumn(i, U.getColumn(i));
-		visual("Uk", Uk);
+		save("Uk", Uk);
 		
 		// build S matrix
 		logger.info("Reducing S to Sk...");
@@ -100,12 +109,12 @@ public class JblasSVD {
 		for (int i = 0; i < dim; i++) {
 			Sk.put(i, i, S.get(i));
 		}
-		visual("Sk", Sk);
+		save("Sk", Sk);
 		
 		// calculate principal component matrix...
 		logger.info("Computing principal components...");
 		DoubleMatrix B = Uk.mmul(Sk);
-		visual("B", B);
+		save("B", B);
 		
 		return B;
 		
@@ -122,7 +131,7 @@ public class JblasSVD {
 		logger.info("Type 'reconstruct' started...");
 
 		A = centerData(A);
-		visual("A", A);
+		save("A", A);
 		
 		DoubleMatrix[] usv = Singular.fullSVD(A);
 		// n x n
@@ -132,38 +141,38 @@ public class JblasSVD {
 		// p x p (straight)
 		DoubleMatrix V = usv[2];
 		
-		visual("U", U);
-		visual("S", S);
-		visual("V", V);
+		save("U", U);
+		save("S", S);
+		save("V", V);
 		
 		// n x k
 		DoubleMatrix Uk = new DoubleMatrix(U.rows, k);
 		for(int i=0; i<k; i++)
 			Uk.putColumn(i, U.getColumn(i));
-		visual("Uk", Uk);
+		save("Uk", Uk);
 		
 		// k x k
 		DoubleMatrix Sk = new DoubleMatrix(k, k);
 		for (int i = 0; i < k; i++) {
 			Sk.put(i, i, S.get(i));
 		}
-		visual("Sk", Sk);
+		save("Sk", Sk);
 		
 		// p x k (straight)
 		DoubleMatrix Vk = new DoubleMatrix(A.columns, k);
 		for (int i = 0; i < k; i++) {
 			Vk.putColumn(i, V.getColumn(i));
 		}
-		visual("Vk", Vk);
+		save("Vk", Vk);
  		
 		// 
 		DoubleMatrix Aapprox = Uk.mmul(Sk).mmul(Vk.transpose());
-		visual("Aapprox", Aapprox);
+		save("Aapprox", Aapprox);
 		
 		DoubleMatrix Areduced = new DoubleMatrix(A.rows, k);
 		for(int i=0; i<k; i++)
 			Areduced.putColumn(i, Aapprox.getColumn(i));
-		visual("C"+k, Areduced);
+		save("C"+k, Areduced);
 		
 		return Areduced;
 		
@@ -196,7 +205,7 @@ public class JblasSVD {
 		
 		// 
 		DoubleMatrix Aapprox = U.mmul(Sk).mmul(V.transpose());
-		visual("Aapprox", Aapprox);
+		save("Aapprox", Aapprox);
 		
 		return Aapprox;
 		
@@ -207,7 +216,7 @@ public class JblasSVD {
 		logger.info("Type 'reconstruct2' started...");
 
 		A = centerData(A);
-		visual("A", A);
+		save("A", A);
 		
 		DoubleMatrix[] usv = Singular.fullSVD(A);
 		// n x n
@@ -217,19 +226,19 @@ public class JblasSVD {
 		// p x p (straight)
 		DoubleMatrix V = usv[2];
 		
-		visual("U", U);
-		visual("S", S);
-		visual("V", V);
+		save("U", U);
+		save("S", S);
+		save("V", V);
 		
 		for(int i = k; i < U.columns; i++)
 			U.putColumn(i, DoubleMatrix.zeros(U.rows, 1));
-		visual("Uk", U);
+		save("Uk", U);
 		
 		DoubleMatrix Sm = new DoubleMatrix(A.rows, A.columns);
 		for (int i = 0; i < k; i++) {
 			Sm.put(i, i, S.get(i));
 		}
-		visual("Sk", Sm);
+		save("Sk", Sm);
 		
 //		for (int i = k; i < V.rows; i++) {
 //			V.putColumn(i, DoubleMatrix.zeros(1, V.columns));
@@ -238,36 +247,43 @@ public class JblasSVD {
  		
 		// 
 		DoubleMatrix Aapprox = U.mmul(Sm).mmul(V.transpose());
-		visual("Aapprox", Aapprox);
+		save("Aapprox", Aapprox);
 				
 		return Aapprox;
 	}
-
-
-	public void visual(String name, DoubleMatrix o) {
-		
-		new File("etc/").mkdir();
-		logger.info("Saving '"+name+"' to file...");
-		
-		try {
-			PrintWriter pw = new PrintWriter(new File("etc/" + dir + "/" + name + ".csv"));
-			for(int i=0; i<o.rows; i++) {
-				for(int j=0; j<o.columns; j++) {
-					pw.print(o.get(i, j));
-					if(j < o.columns - 1)
-						pw.print("\t");
-				}
-				pw.println();
-			}
-			pw.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+	
+	public void saveAs(String name, DoubleMatrix A) {
+		boolean temp = saveSteps;
+		setSaveSteps(true);
+		save(name, A);
+		setSaveSteps(temp);
 	}
 
-	public void normalize(DoubleMatrix A, String outname) {
+	protected void save(String name, DoubleMatrix o) {
+		
+		if(saveSteps) {
+			
+			logger.info("Saving '"+name+"' to file...");
+			
+			try {
+				PrintWriter pw = new PrintWriter(new File("etc/" + dir + "/" + name + ".csv"));
+				for(int i=0; i<o.rows; i++) {
+					for(int j=0; j<o.columns; j++) {
+						pw.print(o.get(i, j));
+						if(j < o.columns - 1)
+							pw.print("\t");
+					}
+					pw.println();
+				}
+				pw.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			
+		}
+	}
+
+	public DoubleMatrix normalize(DoubleMatrix A) {
 		
 		DoubleMatrix B = new DoubleMatrix(A.rows, A.columns);
 		DoubleMatrix max = A.columnMaxs();
@@ -286,7 +302,9 @@ public class JblasSVD {
 				B.put(i, j, (A.get(i, j) - mn) / (mx - mn));
 		}
 		
-		visual(outname, B);
+		save("C"+B.columns, B);
+		
+		return B;
 	}
 
 }

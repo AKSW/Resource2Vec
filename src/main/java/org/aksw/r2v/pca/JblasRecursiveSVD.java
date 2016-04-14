@@ -21,7 +21,7 @@ public class JblasRecursiveSVD extends JblasSVD {
 			logger.info("C.col = "+C.columns);
 			logger.info("dim = "+dim);
 			C = pca(C, dim);
-			visual("C(dim="+dim+")", C);
+			save("C(dim="+dim+")", C);
 		}
 
 		return C;
