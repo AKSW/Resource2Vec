@@ -19,11 +19,15 @@ public class InstanceMatching {
 
 	public static void main(String[] args) throws IOException {
 		
-		int limit = 3;
+		run(3);
+		
+	}
+	
+	public static void run(int dim) throws IOException {
 		
 		// load matrices
-		DoubleMatrix c1 = loadMatrix("person11");
-		DoubleMatrix c2 = loadMatrix("person12");
+		DoubleMatrix c1 = loadMatrix("person11", dim);
+		DoubleMatrix c2 = loadMatrix("person12", dim);
 		
 		// load labels
 		ArrayList<String> l1 = loadLabels("person11");
@@ -40,7 +44,7 @@ public class InstanceMatching {
 		PrintWriter pw = new PrintWriter(new File("etc/learning/M.csv"));
 		
 		int pos = 0;
-		for(int i=0; i < (c1.rows / limit) * limit; i++) {
+		for(int i=0; i < (c1.rows / dim) * dim; i++) {
 			
 //			System.out.println("Row #"+i);
 			
@@ -51,14 +55,14 @@ public class InstanceMatching {
 			if(v == null) // no sameas here...
 				continue;
 			
-			DoubleMatrix t1 = new DoubleMatrix(limit, c1.columns);
+			DoubleMatrix t1 = new DoubleMatrix(dim, c1.columns);
 			t1.putRow(pos, c1.getRow(i));
-			DoubleMatrix t2 = new DoubleMatrix(limit, c2.columns);
+			DoubleMatrix t2 = new DoubleMatrix(dim, c2.columns);
 			t2.putRow(pos, v);
 			pos++;
 //			System.out.println("pos = " + pos);
 			
-			if(pos == limit) {
+			if(pos == dim) {
 				DoubleMatrix M = Solve.pinv(t1).mmul(t2);
 				String s = "";
 				for(double d : M.data)
@@ -104,21 +108,20 @@ public class InstanceMatching {
 		return labels;
 	}
 
-	private static DoubleMatrix loadMatrix(String dir) throws FileNotFoundException {
+	private static DoubleMatrix loadMatrix(String dir, int dim) throws FileNotFoundException {
 		
+		String input = "etc/"+dir+"/D"+dim+".csv";
 		
-		Scanner in = new Scanner(new File("etc/"+dir+"/C3.csv"));
-		int length = 0, dim = 0;
+		Scanner in = new Scanner(new File(input));
+		int length = 0;
 		while(in.hasNextLine()) {
-			String line = in.nextLine();
-			if(dim == 0)
-				dim = line.split("\t").length;
+			in.nextLine();
 			length++;
 		}
 		System.out.println(length + " x "+dim);
 		DoubleMatrix t = new DoubleMatrix(length, dim);
 		in.close();
-		in = new Scanner(new File("etc/"+dir+"/C3.csv"));
+		in = new Scanner(new File(input));
 		for(int i=0; in.hasNextLine(); i++) {
 			String[] coord = in.nextLine().split("\t");
 			DoubleMatrix v = new DoubleMatrix(1, coord.length);

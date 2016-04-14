@@ -323,10 +323,11 @@ public class R2VModel {
 	}
 
 	/**
-	 * @param ttype 
-	 * 
+	 * @param ttype
+	 * @param namespace
+	 * @param dim
 	 */
-	public void reduce(String ttype, String namespace) {
+	public void reduce(String ttype, String namespace, String dim) {
 		
 		logger.info("Starting dimensionality reduction with argument = '"+ttype+"'...");
 		
@@ -399,14 +400,17 @@ public class R2VModel {
 			if(pw != null)
 				pw.close();
 			
-			DoubleMatrix B = pca.pca(A, 3);
+			int dimInt = Integer.parseInt(dim);
+			DoubleMatrix B = pca.pca(A, dimInt);
 			// normalize into [0,1]^n
-			DoubleMatrix C3 = pca.normalize(B);
-			pca.saveAs("C3", C3);
+			DoubleMatrix Cn = pca.normalize(B);
+			pca.saveAs("C"+dim, Cn);
 			
+			// generate script for 3D plots + extract submatrix from namespace only
 			logger.info("Generating SAGE script within namespace '"+namespace+"'...");
 			try {
-				SageVisualization.run(dir, namespace);
+				SageVisualization.run(dir, namespace, dimInt);
+				SageVisualization.submatrix(dir, namespace, dimInt);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

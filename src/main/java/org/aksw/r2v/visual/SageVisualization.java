@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
@@ -18,11 +19,17 @@ public class SageVisualization {
 	public static void main(String[] args) throws FileNotFoundException {
 		
 //		run("etc/pca/C3.csv", "etc/pca/pca_scatter_plot.py", "http://dbpedia.org/resource/");
-		run("person12", "http://www.okkam.org/oaie/person2-");
+		run("person12", "http://www.okkam.org/oaie/person2-", 2);
 		
 	}
 	
-	public static void run(String dir, String namespace) throws FileNotFoundException {
+	/**
+	 * @param dir
+	 * @param namespace
+	 * @param dim
+	 * @throws FileNotFoundException
+	 */
+	public static void run(String dir, String namespace, int dim) throws FileNotFoundException {
 		
 		PrintWriter pw = new PrintWriter(new File("etc/"+dir+"/pca_scatter_plot.py"));
 		
@@ -37,7 +44,7 @@ public class SageVisualization {
 	
 		PrintWriter labOut = new PrintWriter(new File("etc/"+dir+"/labels_out.txt"));
 		
-		Scanner in = new Scanner(new File("etc/"+dir+"/C3.csv"));
+		Scanner in = new Scanner(new File("etc/"+dir+"/C"+dim+".csv"));
 		pw.print("points = [");
 		for(int r=0; in.hasNextLine(); r++) {
 			String uri = uris.get(r);
@@ -45,7 +52,7 @@ public class SageVisualization {
 			if(!uri.startsWith(namespace))
 				continue;
 			String coord = "(", textCoord = "(";
-			for(int i=0; i<DIM; i++) {
+			for(int i=0; i<DIM && i<dim; i++) {
 				String val = line[i].trim();
 				if(val.startsWith("["))
 					val = val.substring(1);
@@ -74,6 +81,39 @@ public class SageVisualization {
 		pw.println("p = point3d(points,size=10,color='blue')");
 		pw.println("(p" + pt.toString() + ").show(xmin=0, xmax=1, ymin=0, ymax=1, zmin=0, zmax=1)");
 		
+		pw.close();
+		
+	}
+
+	/**
+	 * @param dir
+	 * @param namespace
+	 * @param dimInt
+	 * @throws FileNotFoundException
+	 */
+	public static void submatrix(String dir, String namespace, int dimInt) throws FileNotFoundException {
+		// labels out
+		TreeSet<String> urisOut = new TreeSet<>();
+		Scanner labOut = new Scanner(new File("etc/"+dir+"/labels_out.txt"));
+		while(labOut.hasNextLine())
+			urisOut.add(labOut.nextLine());
+		labOut.close();
+
+		// labels
+		ArrayList<String> uris = new ArrayList<>();
+		Scanner lab = new Scanner(new File("etc/"+dir+"/labels.txt"));
+		while(lab.hasNextLine())
+			uris.add(lab.nextLine());
+		lab.close();
+
+		PrintWriter pw = new PrintWriter(new File("etc/"+dir+"/D"+dimInt+".csv"));
+		Scanner in = new Scanner(new File("etc/"+dir+"/C"+dimInt+".csv"));
+		for(int i=0; in.hasNextLine(); i++) {
+			String line = in.nextLine();
+			if(urisOut.contains(uris.get(i)))
+				pw.println(line);
+		}
+		in.close();
 		pw.close();
 		
 	}

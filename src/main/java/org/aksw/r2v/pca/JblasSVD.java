@@ -43,10 +43,9 @@ public class JblasSVD {
 		}
 		
 		try {
-			SageVisualization.run("asd", "http://dbpedia.org/resource/");
+			SageVisualization.run("asd", "http://dbpedia.org/resource/", 3);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 
 	}
@@ -83,7 +82,7 @@ public class JblasSVD {
 	 */
 	public DoubleMatrix pca(DoubleMatrix A, int dim) {
 		
-		logger.info("Type 'pca' started.");
+		logger.info("Type 'pca' started (target dimensions = "+dim+").");
 		
 		A = centerData(A);
 		save("A", A);
