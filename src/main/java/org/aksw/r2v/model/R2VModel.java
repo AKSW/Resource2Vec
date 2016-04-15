@@ -382,7 +382,7 @@ public class R2VModel {
 			JblasSVD pca = new JblasSVD(dir);
 			PrintWriter pw = null;
 			try {
-				pw = new PrintWriter(new File("etc/"+dir+"/labels.txt"));
+				pw = new PrintWriter(new File("etc/"+dir+"/labels_C.txt"));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}

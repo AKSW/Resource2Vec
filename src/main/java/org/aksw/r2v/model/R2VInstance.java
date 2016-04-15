@@ -15,6 +15,7 @@ public class R2VInstance {
 	private R2VModel model;
 	private HashMap<R2VProperty, R2VFeature> features;
 	
+	
 	private HashMap<String, Double> flatSparseVector;
 
 	public R2VInstance(R2VModel model, OWLNamedIndividual ind) {

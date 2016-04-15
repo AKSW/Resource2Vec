@@ -34,7 +34,7 @@ public class SageVisualization {
 		PrintWriter pw = new PrintWriter(new File("etc/"+dir+"/pca_scatter_plot.py"));
 		
 		ArrayList<String> uris = new ArrayList<>();
-		Scanner lab = new Scanner(new File("etc/"+dir+"/labels.txt"));
+		Scanner lab = new Scanner(new File("etc/"+dir+"/labels_C.txt"));
 		while(lab.hasNextLine())
 			uris.add(lab.nextLine());
 		lab.close();
@@ -42,7 +42,7 @@ public class SageVisualization {
 		StringBuffer sb = new StringBuffer();
 		StringBuffer pt = new StringBuffer();
 	
-		PrintWriter labOut = new PrintWriter(new File("etc/"+dir+"/labels_out.txt"));
+		PrintWriter labOut = new PrintWriter(new File("etc/"+dir+"/labels_D.txt"));
 		
 		Scanner in = new Scanner(new File("etc/"+dir+"/C"+dim+".csv"));
 		pw.print("points = [");
@@ -93,24 +93,24 @@ public class SageVisualization {
 	 */
 	public static void submatrix(String dir, String namespace, int dimInt) throws FileNotFoundException {
 		// labels out
-		TreeSet<String> urisOut = new TreeSet<>();
-		Scanner labOut = new Scanner(new File("etc/"+dir+"/labels_out.txt"));
+		TreeSet<String> urisD = new TreeSet<>();
+		Scanner labOut = new Scanner(new File("etc/"+dir+"/labels_D.txt"));
 		while(labOut.hasNextLine())
-			urisOut.add(labOut.nextLine());
+			urisD.add(labOut.nextLine());
 		labOut.close();
 
 		// labels
-		ArrayList<String> uris = new ArrayList<>();
-		Scanner lab = new Scanner(new File("etc/"+dir+"/labels.txt"));
+		ArrayList<String> urisC = new ArrayList<>();
+		Scanner lab = new Scanner(new File("etc/"+dir+"/labels_C.txt"));
 		while(lab.hasNextLine())
-			uris.add(lab.nextLine());
+			urisC.add(lab.nextLine());
 		lab.close();
 
 		PrintWriter pw = new PrintWriter(new File("etc/"+dir+"/D"+dimInt+".csv"));
 		Scanner in = new Scanner(new File("etc/"+dir+"/C"+dimInt+".csv"));
 		for(int i=0; in.hasNextLine(); i++) {
 			String line = in.nextLine();
-			if(urisOut.contains(uris.get(i)))
+			if(urisD.contains(urisC.get(i)))
 				pw.println(line);
 		}
 		in.close();
