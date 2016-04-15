@@ -402,6 +402,10 @@ public class R2VModel {
 			
 			int dimInt = Integer.parseInt(dim);
 			DoubleMatrix B = pca.pca(A, dimInt);
+			
+			// TODO remove me
+			pca.setSaveSteps(true);
+			
 			// normalize into [0,1]^n
 			DoubleMatrix Cn = pca.normalize(B);
 			pca.saveAs("C"+dim, Cn);
