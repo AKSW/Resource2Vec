@@ -17,6 +17,8 @@ hs_err_pid*
 .classpath
 .project
 /.settings/
+.DS_Store
 
 /server.sh
 /etc/
+/experiments/

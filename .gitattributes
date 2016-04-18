@@ -1,0 +1,5 @@
+src/test/resources/Astronaut.rdf filter=lfs diff=lfs merge=lfs -text
+src/test/resources/European_Union_Country.rdf filter=lfs diff=lfs merge=lfs -text
+src/test/resources/President_of_Italy.rdf filter=lfs diff=lfs merge=lfs -text
+src/test/resources/person11.rdf filter=lfs diff=lfs merge=lfs -text
+src/test/resources/person12.rdf filter=lfs diff=lfs merge=lfs -text
