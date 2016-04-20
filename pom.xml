@@ -20,6 +20,7 @@
 	</build>
 	<modules>
 		<module>resource2vec-core</module>
+		<module>resource2vec-api</module>
 	</modules>
 	<packaging>pom</packaging>
 </project>
