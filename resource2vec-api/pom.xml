@@ -75,8 +75,11 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.10</version>
 		</dependency>
-
-
+		<dependency>
+			<groupId>org.openml</groupId>
+			<artifactId>apiconnector</artifactId>
+			<version>1.0.10</version>
+		</dependency>
 	</dependencies>
 
 </project>

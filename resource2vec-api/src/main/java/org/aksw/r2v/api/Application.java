@@ -18,12 +18,13 @@ public class Application {
 	public static final String TMP_PATH = "/tmp/resource2vec/";
 
 	public static String OPENML_API_KEY;
+
 	
 	static {
 		new File(TMP_PATH).mkdirs();
 		
 		try {
-			Scanner in = new Scanner(new File("openml_api_key"));
+			Scanner in = new Scanner(new File("src/main/java/openml_api_key"));
 			OPENML_API_KEY = in.nextLine();
 			in.close();
 		} catch (FileNotFoundException e) {}
