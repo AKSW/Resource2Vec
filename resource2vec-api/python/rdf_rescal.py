@@ -22,7 +22,7 @@ on the m n*n slices
 
 #read configs
 config = ConfigParser.ConfigParser()
-config.read("python/rescal.ini")
+config.read(os.path.dirname(os.path.abspath(__file__)) + "/rescal.ini")
 pathToRescal = config.get("paths","pathToRescal")
 
 pathToFile = sys.argv[1] # config.get("paths","pathToTurtleFile")
