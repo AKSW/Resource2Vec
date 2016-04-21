@@ -65,7 +65,7 @@ predicatesList = list()
 f = open(targetDir + '/resources.tsv', 'w')
 for r in resources:
     resourcesList.append(r)
-    f.write(r.n3()[1:-1] + "\n")
+    f.write(r.n3().encode('utf8')[1:-1] + "\n")
 f.close()
 for p in predicates:
     predicatesList.append(p)
