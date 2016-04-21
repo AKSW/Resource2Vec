@@ -56,7 +56,7 @@ public class RDFEmbeddingController {
 		switch (method.toLowerCase()) {
 		case "rescal":
 			HashMap<String, String> hyperpMap = toMap(hyperp);
-			String command = "/usr/local/bin/python python/rdf_rescal.py "
+			String command = Application.PYTHON_PATH + " python/rdf_rescal.py "
 					+ rdfDataset.getAbsolutePath() + " " + tmpPath + "/ "
 					+ hyperpMap.get("rank");
 			log.info("Executing command: " + command);
