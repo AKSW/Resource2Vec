@@ -7,6 +7,7 @@ import numpy as np
 import imp
 import ConfigParser
 import os
+import re
 
 """
 Turtle reader to parse a turtle file into a
@@ -65,7 +66,7 @@ predicatesList = list()
 f = open(targetDir + '/resources.tsv', 'w')
 for r in resources:
     resourcesList.append(r)
-    f.write(r.n3().encode('utf8')[1:-1] + "\n")
+    f.write(re.sub(r"\n", " ", re.sub(r"\r", " ", r.n3().encode('utf8')[1:-1])) + "\n")
 f.close()
 for p in predicates:
     predicatesList.append(p)
