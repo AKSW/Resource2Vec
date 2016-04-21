@@ -37,9 +37,9 @@
 			<url>https://repo.spring.io/libs-release</url>
 		</repository>
 		<repository>
-			<id>maven.aksw.snapshots</id>
+			<id>maven.aksw.internal</id>
 			<name>University Leipzig, AKSW Maven2 Repository</name>
-			<url>http://maven.aksw.org/archiva/repository/snapshots</url>
+			<url>http://maven.aksw.org/archiva/repository/internal</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -63,7 +63,7 @@
 		<dependency>
 			<groupId>org.aksw.mex</groupId>
 			<artifactId>log4mex</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>

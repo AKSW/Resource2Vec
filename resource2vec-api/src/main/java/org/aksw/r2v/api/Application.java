@@ -16,12 +16,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 	
 	public static final String TMP_PATH = "/tmp/resource2vec/";
+	public static final String TMP_DATASETS_PATH = TMP_PATH + "datasets/";
 
 	public static String OPENML_API_KEY;
 
 	
 	static {
-		new File(TMP_PATH).mkdirs();
+		new File(TMP_DATASETS_PATH).mkdirs();
 		
 		try {
 			Scanner in = new Scanner(new File("src/main/java/openml_api_key"));

@@ -37,7 +37,7 @@ public class RDFEmbeddingController {
 	private final static Logger log = LogManager
 			.getLogger(RDFEmbeddingController.class);
 
-	@RequestMapping("/embedding")
+//	@RequestMapping("/embedding")
 	public RDFEmbedding rdfEmbedding(
 			@RequestParam(value = "dataset", defaultValue = "") String dataset,
 			@RequestParam(value = "name", defaultValue = "") String name,
@@ -52,15 +52,15 @@ public class RDFEmbeddingController {
 		File rdfDataset = download(dataset);
 		String tmpPath = getFilename(dataset).replaceAll("\\.", "");
 
-		// call rescal
+		// call KGE method
 		switch (method.toLowerCase()) {
 		case "rescal":
-			 HashMap<String, String> hyperpMap = toMap(hyperp);
-			 String command = "/usr/local/bin/python python/rdf_rescal.py "
-			 + rdfDataset.getAbsolutePath() + " " + tmpPath
-			 + "/ " + hyperpMap.get("rank");
-			 log.info("Executing command: "+command);
-			 Shell.execute(command);
+			HashMap<String, String> hyperpMap = toMap(hyperp);
+			String command = "/usr/local/bin/python python/rdf_rescal.py "
+					+ rdfDataset.getAbsolutePath() + " " + tmpPath + "/ "
+					+ hyperpMap.get("rank");
+			log.info("Executing command: " + command);
+			Shell.execute(command);
 			break;
 		default:
 			log.error("Embedding method not found.");
@@ -121,7 +121,7 @@ public class RDFEmbeddingController {
 			log.debug(dsdXML);
 			UploadDataSet ud = client.dataUpload(description, arff);
 			id = ud.getId();
-			log.info("Dataset created with id="+id);
+			log.info("Dataset created with id=" + id);
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			return null;
@@ -130,14 +130,14 @@ public class RDFEmbeddingController {
 		try {
 			FileUtils.deleteDirectory(new File(tmpPath));
 		} catch (IOException e) {
-			log.warn("Could not delete "+tmpPath+"! "+e.getMessage());
+			log.warn("Could not delete " + tmpPath + "! " + e.getMessage());
 		}
 
 		// return object with URL returned by openml
 		RDFEmbedding rdfemb = new RDFEmbedding(dataset, method, hyperp,
 				"http://www.openml.org/d/" + id);
 		log.info("Returned: " + rdfemb.getDataset());
-		
+
 		return rdfemb;
 	}
 
@@ -160,20 +160,55 @@ public class RDFEmbeddingController {
 		}
 		return map;
 	}
-	
+
 	// TODO test method to delete dataset on OpenML
 
-	@RequestMapping(method = RequestMethod.POST, value = "/upload")
-	public DatasetInfo upload(@RequestParam("file") MultipartFile file,
-			@RequestParam(value = "dataset", defaultValue = "") String dataset,
+//	@RequestMapping(method = RequestMethod.POST, value = "/upload")
+	public UploadResponse upload(@RequestParam("file") MultipartFile file,
 			@RequestParam(value = "name", defaultValue = "") String name) {
 
-		if (dataset.equals("") || name.equals(""))
-			return null;
+		if (file.isEmpty() || name.equals("")) {
+			String resp = "Ignoring request: file or name are empty.";
+			log.error(resp);
+			return new UploadResponse(null, null, resp);
+		}
 
-		// TODO
+		File newfile = new File(Application.TMP_DATASETS_PATH
+				+ file.getOriginalFilename());
+		try {
+			file.transferTo(newfile);
+		} catch (IllegalStateException | IOException e) {
+			String resp = e.getMessage();
+			log.error(resp);
+			return new UploadResponse(null, null, resp);
+		}
 
-		return null;
+		String url = newfile.toURI().toString();
+		String response = "OK";
+		log.info("File " + url + " with name " + name + " got response: "
+				+ response);
+
+		return new UploadResponse(url, name, response);
+	}
+
+	@RequestMapping(method = RequestMethod.POST, value = "/process")
+	public RDFEmbedding process(@RequestParam("file") MultipartFile file,
+			@RequestParam(value = "dataset", defaultValue = "") String dataset,
+			@RequestParam(value = "name", defaultValue = "") String name,
+			@RequestParam(value = "method", defaultValue = "") String method,
+			@RequestParam(value = "hyperp", defaultValue = "") String hyperp) {
+
+		if (!file.isEmpty()) {
+
+			// upload file
+			UploadResponse ur = upload(file, name);
+			if (ur.getResponse().equals("OK"))
+				dataset = ur.getDataset();
+			
+		}
+
+		return rdfEmbedding(dataset, name, method, hyperp);
+		
 	}
 
 	private File download(String dataset) {
@@ -190,5 +225,30 @@ public class RDFEmbeddingController {
 	private String getFilename(String dataset) {
 		return Application.TMP_PATH + DigestUtils.sha1Hex(dataset)
 				+ dataset.substring(dataset.lastIndexOf('.'));
+	}
+}
+
+class UploadResponse {
+	private String dataset;
+	private String name;
+	private String response;
+
+	public UploadResponse(String dataset, String name, String response) {
+		super();
+		this.dataset = dataset;
+		this.name = name;
+		this.response = response;
+	}
+
+	public String getDataset() {
+		return dataset;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getResponse() {
+		return response;
 	}
 }

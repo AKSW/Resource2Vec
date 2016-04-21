@@ -1,0 +1,13 @@
+<h1>Resource2Vec prototype</h1>
+<form method="POST" action="http://localhost:8080/process" enctype="multipart/form-data">
+	<label>Dataset</label>&nbsp;<select name="dataset">
+		<option value="" checked="checked">-- Upload new dataset --</option>
+	</select>
+	<label>Upload</label>&nbsp;<input type="file" name="file" accept="*/*">
+	<label>Dataset name</label>&nbsp;<input type="text" name="name">
+	<label>Method</label>&nbsp;<select name="method">
+		<option value="RESCAL" checked="checked">RESCAL</option>
+	</select>
+	<label>Hyperparameters</label>&nbsp;<input type="text" name="name" value="rank=2">
+	<input type="submit" value="Process">
+</form>
