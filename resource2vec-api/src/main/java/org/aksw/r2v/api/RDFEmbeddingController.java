@@ -52,109 +52,64 @@ public class RDFEmbeddingController {
 			return null;
 		}
 
+		HashMap<String, String> hyperpMap = toMap(hyperp);
 		File rdfDataset = download(dataset);
 		String tmpPath = getFilename(dataset).replaceAll("\\.", "");
 		
-		HashMap<String, String> hyperpMap = toMap(hyperp);
-
 		// call KGE method
-		switch (method.toLowerCase()) {
-		case "rescal":
-			String command = Application.PYTHON_PATH + " python/rdf_rescal.py "
-					+ rdfDataset.getAbsolutePath() + " " + tmpPath + "/ "
-					+ hyperpMap.get("rank");
-			log.info("Executing command: " + command);
-			Shell.execute(command);
-			break;
-		default:
-			log.error("Embedding method not found.");
+		try {
+			KGEMethodController.call(method, rdfDataset, tmpPath, hyperpMap);
+		} catch (Exception e) {
+			log.error(e.getMessage());
 			return null;
 		}
 
 		// get resources
-		ArrayList<String> res = new ArrayList<>();
+		ArrayList<String> res;
 		try {
-			Scanner in1 = new Scanner(new File(tmpPath + "/resources.tsv"));
-			while (in1.hasNextLine())
-				res.add(in1.nextLine());
-			in1.close();
+			res = CollectData.resources(tmpPath);
 		} catch (FileNotFoundException e) {
 			log.error("Probably a Python error occurred (e.g., incorrect RDF syntax). " + e.getMessage());
 			return null;
 		}
 		// get vectors
-		File arff = new File(tmpPath + "/dataset.arff");
+		File arff;
 		try {
-			Scanner in1 = new Scanner(new File(tmpPath + "/vectors.tsv"));
-			// build arff file
-			PrintWriter pw = new PrintWriter(arff);
-			pw.println("@RELATION " + method.toUpperCase() + "\n");
-			pw.println("@ATTRIBUTE URI STRING");
-			for (int i = 0; in1.hasNextLine(); i++) {
-				// for each instance...
-				String uri = res.get(i);
-				String[] vec = in1.nextLine().split("\t");
-				if (i == 0)
-					header(pw, vec.length);
-				StringBuffer sb = new StringBuffer();
-				sb.append("\"" + uri + "\",");
-				for (String v : vec)
-					sb.append(v + ",");
-				sb.deleteCharAt(sb.length() - 1);
-				pw.println(sb.toString());
-			}
-			pw.close();
-			in1.close();
+			arff = CollectData.vectors(tmpPath, method, res);
 		} catch (FileNotFoundException e) {
 			log.error(e.getMessage());
 			return null;
 		}
 
 		// upload arff to openml
-		int id;
-		try {
-			OpenmlConnector client = new OpenmlConnector(
-					"http://www.openml.org/", Application.OPENML_API_KEY);
-			XStream xstream = XstreamXmlMapping.getInstance();
-			String desc = "Knowledge Graph Embedding model for dataset " + name
-					+ " using method " + method
-					+ " with hyperparameters " + hyperpMap
-					+ ".";
-			DataSetDescription dsd = new DataSetDescription(name,
-					desc, "arff", "class", "public");
-			String dsdXML = xstream.toXML(dsd);
-			File description = Conversion
-					.stringToTempFile(dsdXML, name, "arff");
-			log.info(dsdXML);
-			UploadDataSet ud = client.dataUpload(description, arff);
-			id = ud.getId();
-			log.info("Dataset created with id=" + id);
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			e.printStackTrace();
-			return null;
-		}
+		int id = 0;
+//		try {
+//			id = OpenMLController.upload(arff, method, name, hyperpMap);
+//		} catch (Exception e) {
+//			log.error(e.getMessage());
+//			return null;
+//		}
+		
+		// TODO remove me!
+		log.info("Simulating upload to OpenML (moving arff file locally).");
+		arff.renameTo(new File(arff.getName()));
+		
 		// delete tmp files
 		try {
-			FileUtils.deleteDirectory(new File(tmpPath));
+			rdfDataset.delete();
+			FileUtils.deleteDirectory(new File(tmpPath + "/"));
 		} catch (IOException e) {
-			log.warn("Could not delete " + tmpPath + "! " + e.getMessage());
+			log.warn("Could not delete file or path " + tmpPath + "! " + e.getMessage());
 		}
 
 		// return object with URL returned by openml
 		RDFEmbedding rdfemb = new RDFEmbedding(dataset, method, hyperp,
 				"http://www.openml.org/d/" + id);
-		log.info("Returned: " + rdfemb.getDataset());
+		log.info("Returned: " + rdfemb.getEmbeddings());
 
 		return rdfemb;
 	}
 
-	private void header(PrintWriter pw, int length) {
-		for (int i = 0; i < length; i++)
-			pw.println("@ATTRIBUTE dim" + (i + 1) + " NUMERIC");
-		pw.println();
-		pw.println("@DATA");
-	}
 
 	private HashMap<String, String> toMap(String hyperp) {
 		HashMap<String, String> map = new HashMap<>();
