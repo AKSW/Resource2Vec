@@ -75,7 +75,8 @@ public class RDFEmbeddingController {
 				res.add(in1.nextLine());
 			in1.close();
 		} catch (FileNotFoundException e) {
-			log.error(e.getMessage());
+			log.error("Probably a Python error occurred (e.g., incorrect RDF syntax). " + e.getMessage());
+			return null;
 		}
 		// get vectors
 		File arff = new File(tmpPath + "/dataset.arff");
@@ -102,6 +103,7 @@ public class RDFEmbeddingController {
 			in1.close();
 		} catch (FileNotFoundException e) {
 			log.error(e.getMessage());
+			return null;
 		}
 
 		// upload arff to openml
@@ -204,7 +206,8 @@ public class RDFEmbeddingController {
 			UploadResponse ur = upload(file, name);
 			if (ur.getResponse().equals("OK"))
 				dataset = ur.getDataset();
-			
+			else
+				return null;
 		}
 
 		return rdfEmbedding(dataset, name, method, hyperp);
