@@ -37,7 +37,7 @@ logging.basicConfig()
 graph = Graph()
 #get format from extension
 file_extension = os.path.splitext(pathToFile)[1][1:].lower()
-if file_extension == "rdf":
+if file_extension == "rdf" or file_extension == "owl":
 #parsing RDF file into data structure
     graph.parse(pathToFile)
 else:
