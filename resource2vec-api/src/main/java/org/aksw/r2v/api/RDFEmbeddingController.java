@@ -51,11 +51,12 @@ public class RDFEmbeddingController {
 
 		File rdfDataset = download(dataset);
 		String tmpPath = getFilename(dataset).replaceAll("\\.", "");
+		
+		HashMap<String, String> hyperpMap = toMap(hyperp);
 
 		// call KGE method
 		switch (method.toLowerCase()) {
 		case "rescal":
-			HashMap<String, String> hyperpMap = toMap(hyperp);
 			String command = Application.PYTHON_PATH + " python/rdf_rescal.py "
 					+ rdfDataset.getAbsolutePath() + " " + tmpPath + "/ "
 					+ hyperpMap.get("rank");
@@ -112,20 +113,22 @@ public class RDFEmbeddingController {
 			OpenmlConnector client = new OpenmlConnector(
 					"http://www.openml.org/", Application.OPENML_API_KEY);
 			XStream xstream = XstreamXmlMapping.getInstance();
+			String desc = "Knowledge Graph Embedding model for dataset " + name
+					+ " using method " + method
+					+ " with hyperparameters " + hyperpMap
+					+ ".";
 			DataSetDescription dsd = new DataSetDescription(name,
-					"Knowledge Graph Embedding model for dataset " + name
-							+ " (URL: " + dataset + ") using method " + method
-							+ " with the following hyperparameters: " + hyperp
-							+ ".", "arff", "class", "public");
+					desc, "arff", "class", "public");
 			String dsdXML = xstream.toXML(dsd);
 			File description = Conversion
 					.stringToTempFile(dsdXML, name, "arff");
-			log.debug(dsdXML);
+			log.info(dsdXML);
 			UploadDataSet ud = client.dataUpload(description, arff);
 			id = ud.getId();
 			log.info("Dataset created with id=" + id);
 		} catch (Exception e) {
 			log.error(e.getMessage());
+			e.printStackTrace();
 			return null;
 		}
 		// delete tmp files
@@ -152,6 +155,8 @@ public class RDFEmbeddingController {
 
 	private HashMap<String, String> toMap(String hyperp) {
 		HashMap<String, String> map = new HashMap<>();
+		if(hyperp.isEmpty())
+			return map;
 		try {
 			for (String entry : hyperp.split(";")) {
 				String[] e = entry.split("=");
@@ -164,6 +169,9 @@ public class RDFEmbeddingController {
 	}
 
 	// TODO test method to delete dataset on OpenML
+	public void delete(String openmlID) {
+		
+	}
 
 //	@RequestMapping(method = RequestMethod.POST, value = "/upload")
 	public UploadResponse upload(@RequestParam("file") MultipartFile file,
@@ -209,6 +217,9 @@ public class RDFEmbeddingController {
 			else
 				return null;
 		}
+		
+		if(name.isEmpty())
+			name = dataset.substring(dataset.lastIndexOf('/') + 1);
 
 		return rdfEmbedding(dataset, name, method, hyperp);
 		

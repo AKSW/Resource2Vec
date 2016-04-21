@@ -2,6 +2,7 @@
 <form method="POST" action="http://localhost:8080/process" enctype="multipart/form-data">
 	<label>Dataset</label>&nbsp;<select name="dataset">
 		<option value="" checked="checked">-- Upload new dataset --</option>
+		<option value="file:///tmp/resource2vec/datasets/yagoSchema.ttl">YAGO Schema</option>
 	</select>
 	<label>Upload</label>&nbsp;<input type="file" name="file" accept="*/*">
 	<label>Dataset name</label>&nbsp;<input type="text" name="name">
