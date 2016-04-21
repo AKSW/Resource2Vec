@@ -43,7 +43,10 @@ public class RDFEmbeddingController {
 			@RequestParam(value = "name", defaultValue = "") String name,
 			@RequestParam(value = "method", defaultValue = "") String method,
 			@RequestParam(value = "hyperp", defaultValue = "") String hyperp) {
-
+		
+		if(!log.isInfoEnabled())
+			log.error("Info not enabled!");;
+		
 		if (dataset.equals("") || name.equals("") || method.equals("")) {
 			log.error("Ignoring request: dataset or name or method is an empty string.");
 			return null;
