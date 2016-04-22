@@ -96,7 +96,9 @@ public class RDFEmbeddingController {
 		String tmpArff = System.getProperty("user.dir") + "/public/" + arff.getName();
 		log.info("Simulating upload to OpenML (moving arff file locally). "+tmpArff);
 		try {
-			FileUtils.moveFile(arff, new File(tmpArff));
+			File tmpArfffile = new File(tmpArff);
+			tmpArfffile.delete();
+			FileUtils.moveFile(arff, tmpArfffile);
 			log.info("File moved.");
 		} catch (IOException e1) {
 			log.error(e1.getMessage());
