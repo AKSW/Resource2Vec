@@ -19,6 +19,7 @@ public class Application {
 
 	public static String PYTHON_PATH;
 	public static String OPENML_API_KEY;
+	public static String APPLICATION_URL;
 
 	
 	static {
@@ -28,6 +29,7 @@ public class Application {
 		
 		OPENML_API_KEY = Bundle.getString("openml_api_key");
 		PYTHON_PATH = Bundle.getString("python_path");
+		APPLICATION_URL = Bundle.getString("application_url");
 	}
 
     public static void main(String[] args) {

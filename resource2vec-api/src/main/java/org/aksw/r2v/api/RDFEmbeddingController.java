@@ -51,6 +51,8 @@ public class RDFEmbeddingController {
 			log.error("Ignoring request: dataset or name or method is an empty string.");
 			return null;
 		}
+		
+		RDFEmbedding rdfemb = new RDFEmbedding(dataset, method, hyperp, null);
 
 		HashMap<String, String> hyperpMap = toMap(hyperp);
 		File rdfDataset = download(dataset);
@@ -75,36 +77,39 @@ public class RDFEmbeddingController {
 		// get vectors
 		File arff;
 		try {
-			arff = CollectData.vectors(tmpPath, method, res);
+			arff = CollectData.vectors(tmpPath, method, hyperp, res);
 		} catch (FileNotFoundException e) {
 			log.error(e.getMessage());
 			return null;
 		}
 
 		// upload arff to openml
-		int id = 0;
 //		try {
-//			id = OpenMLController.upload(arff, method, name, hyperpMap);
+//			int id = OpenMLController.upload(arff, method, name, hyperpMap);
+//			rdfemb.setEmbeddings("http://www.openml.org/d/" + id);
 //		} catch (Exception e) {
 //			log.error(e.getMessage());
 //			return null;
 //		}
 		
 		// TODO remove me!
-		log.info("Simulating upload to OpenML (moving arff file locally).");
-		arff.renameTo(new File(arff.getName()));
+		String tmpArff = System.getProperty("user.dir") + "/public/" + arff.getName();
+		log.info("Simulating upload to OpenML (moving arff file locally). "+tmpArff);
+		arff.renameTo(new File(tmpArff));
+		rdfemb.setEmbeddings(Application.APPLICATION_URL + "/" + arff.getName());
 		
 		// delete tmp files
 		try {
 			rdfDataset.delete();
-			FileUtils.deleteDirectory(new File(tmpPath + "/"));
+			log.info("Deleted "+rdfDataset.getAbsolutePath());
+			File tmpDir = new File(tmpPath + "/");
+			FileUtils.deleteDirectory(tmpDir);
+			log.info("Deleted dir "+tmpDir.getAbsolutePath());
 		} catch (IOException e) {
 			log.warn("Could not delete file or path " + tmpPath + "! " + e.getMessage());
 		}
 
 		// return object with URL returned by openml
-		RDFEmbedding rdfemb = new RDFEmbedding(dataset, method, hyperp,
-				"http://www.openml.org/d/" + id);
 		log.info("Returned: " + rdfemb.getEmbeddings());
 
 		return rdfemb;

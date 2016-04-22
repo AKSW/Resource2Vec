@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -21,12 +22,13 @@ public class CollectData {
 		return res;
 	}
 
-	public static File vectors(String tmpPath, String method, ArrayList<String> res) throws FileNotFoundException {
+	public static File vectors(String tmpPath, String method, String hyperp, ArrayList<String> res) throws FileNotFoundException {
 		File arff = new File(tmpPath + "/dataset.arff");
 		Scanner in1 = new Scanner(new File(tmpPath + "/vectors.tsv"));
 		// build arff file
 		PrintWriter pw = new PrintWriter(arff);
-		pw.println("@RELATION " + method.toUpperCase() + "\n");
+		String hyp = hyperp.isEmpty() ? "" : " " + hyperp;
+		pw.println("@RELATION \"" + method.toUpperCase() + hyp + "\"\n");
 		pw.println("@ATTRIBUTE URI STRING");
 		for (int i = 0; in1.hasNextLine(); i++) {
 			// for each instance...

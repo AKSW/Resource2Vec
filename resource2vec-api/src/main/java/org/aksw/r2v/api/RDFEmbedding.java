@@ -2,12 +2,16 @@ package org.aksw.r2v.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
+ *
+ */
 public class RDFEmbedding {
 	
 	private final String dataset;
 	private final String method;
 	private final String hyperp;
-	private final String embeddings;
+	private String embeddings;
 	
 	public RDFEmbedding(String dataset, String method, String hyperp, String embeddings) {
 		super();
@@ -29,6 +33,10 @@ public class RDFEmbedding {
 		return method;
 	}
 
+	public void setEmbeddings(String embeddings) {
+		this.embeddings = embeddings;
+	}
+	
 	@JsonProperty(URIs.HYPERP)
 	public String getHyperp() {
 		return hyperp;
