@@ -95,7 +95,12 @@ public class RDFEmbeddingController {
 		// TODO remove me!
 		String tmpArff = System.getProperty("user.dir") + "/public/" + arff.getName();
 		log.info("Simulating upload to OpenML (moving arff file locally). "+tmpArff);
-		arff.renameTo(new File(tmpArff));
+		try {
+			FileUtils.moveFile(arff, new File(tmpArff));
+			log.info("File moved.");
+		} catch (IOException e1) {
+			log.error(e1.getMessage());
+		}
 		rdfemb.setEmbeddings(Application.APPLICATION_URL + "/" + arff.getName());
 		
 		// delete tmp files
