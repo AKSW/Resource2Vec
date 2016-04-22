@@ -1,11 +1,12 @@
 <h1>Resource2Vec prototype</h1>
-<form method="POST" action="http://localhost:8080/process" enctype="multipart/form-data">
+<form method="POST" action="./process" enctype="multipart/form-data">
 
 <!-- FIRST CHOICE: SELECT -->
 	<label>Dataset</label>&nbsp;
 	<select name="dataset">
-		<option value="" checked="checked">-- Upload new dataset --</option>
-		<option value="file:///tmp/resource2vec/datasets/yagoSchema.ttl">YAGO Schema</option>
+		<option value="">-- Enter dataset URL --</option>
+		<option value="">-- Upload new dataset --</option>
+		<option value="file:///tmp/resource2vec/datasets/yagoSchema.ttl" checked="checked">YAGO Schema</option>
 	</select>
 	
 <!-- SECOND CHOICE: INSERT -->
