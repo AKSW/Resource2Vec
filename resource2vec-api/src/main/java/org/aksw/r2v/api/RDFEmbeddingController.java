@@ -85,25 +85,14 @@ public class RDFEmbeddingController {
 
 		// upload arff to openml
 //		try {
-//			int id = OpenMLController.upload(arff, method, name, hyperpMap);
-//			rdfemb.setEmbeddings("http://www.openml.org/d/" + id);
+//			int id = OpenMLController.upload(arff, method, name, hyperpMap, rdfemb);
 //		} catch (Exception e) {
 //			log.error(e.getMessage());
 //			return null;
 //		}
 		
 		// TODO remove me!
-		String tmpArff = System.getProperty("user.dir") + "/public/" + arff.getName();
-		log.info("Simulating upload to OpenML (moving arff file locally). "+tmpArff);
-		try {
-			File tmpArfffile = new File(tmpArff);
-			tmpArfffile.delete();
-			FileUtils.moveFile(arff, tmpArfffile);
-			log.info("File moved.");
-		} catch (IOException e1) {
-			log.error(e1.getMessage());
-		}
-		rdfemb.setEmbeddings(Application.APPLICATION_URL + "/" + arff.getName());
+		OpenMLController.simulateUpload(arff, rdfemb);
 		
 		// delete tmp files
 		try {
