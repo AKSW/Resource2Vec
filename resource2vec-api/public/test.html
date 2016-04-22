@@ -1,27 +1,32 @@
 <h1>Resource2Vec prototype</h1>
 <form method="POST" action="./process" enctype="multipart/form-data">
 
-<!-- FIRST CHOICE: SELECT -->
-	<label>Dataset</label>&nbsp;
-	<select name="dataset">
+	<!-- FIRST CHOICE: SELECT -->
+	<label>Dataset</label>&nbsp; <select name="dataset">
 		<option value="">-- Enter dataset URL --</option>
 		<option value="">-- Upload new dataset --</option>
-		<option value="file:///tmp/resource2vec/datasets/yagoSchema.ttl" checked="checked">YAGO Schema</option>
+		<option value="file:///tmp/resource2vec/datasets/yagoSchema.ttl"
+			selected="selected">YAGO Schema</option>
 	</select>
-	
-<!-- SECOND CHOICE: INSERT -->
-<!-- <label>Dataset URL</label>&nbsp;<input type="text" name="dataset"> -->
 
-<!-- THIRD CHOICE: UPLOAD -->
+	<!-- SECOND CHOICE: INSERT -->
+	<!-- <label>Dataset URL</label>&nbsp;<input type="text" name="dataset"> -->
+
+	<!-- THIRD CHOICE: UPLOAD -->
 	<label>Upload</label>&nbsp;<input type="file" name="file" accept="*/*">
 	<label>Dataset name</label>&nbsp;<input type="text" name="name">
-	
-	<label>Method</label>&nbsp;
-	<select name="method">
-		<option value="RESCAL" checked="checked">RESCAL</option>
+
+	<label>Method</label>&nbsp; <select name="method">
+		<option value="RESCAL" selected="selected">RESCAL</option>
 	</select>
-	
-	<label>Hyperparameters</label>&nbsp;<input type="text" name="hyperp" value="rank=2">
-	
-	<input type="submit" value="Process">
+
+	<div id="description">
+		RESCAL is a tensor factorization for large-scale relational learning
+		from Linked Data, multi-relational data and large multigraphs.<br>
+		<br>
+		<a href="https://github.com/mnick/rescal.py" target="_blank">https://github.com/mnick/rescal.py</a>
+	</div>
+
+	<label>Hyperparameters</label>&nbsp;<input type="text" name="hyperp"
+		value="rank=2"> <input type="submit" value="Process">
 </form>
