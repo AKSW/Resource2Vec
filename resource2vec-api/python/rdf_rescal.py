@@ -1,6 +1,7 @@
 import logging
 import sys
 from rdflib import Graph
+from rdflib.util import *
 from scipy.sparse import *
 from scipy import *
 import numpy as np
@@ -35,15 +36,8 @@ rescal = imp.load_source('rescal', pathToRescal)
 logging.basicConfig()
 
 graph = Graph()
-#get format from extension
-file_extension = os.path.splitext(pathToFile)[1][1:].lower()
-if file_extension == "rdf" or file_extension == "owl":
-#parsing RDF file into data structure
-    graph.parse(pathToFile)
-else:
-    if file_extension == "ttl":
-        file_extension = "n3"
-    graph.parse(pathToFile,format=file_extension)
+the_format = guess_format(pathToFile)
+graph.parse(pathToFile,format=the_format)
 
 if not os.path.exists(targetDir):
     os.mkdir(targetDir)
