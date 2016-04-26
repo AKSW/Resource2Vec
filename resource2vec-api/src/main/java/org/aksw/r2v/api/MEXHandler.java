@@ -1,6 +1,5 @@
 package org.aksw.r2v.api;
 
-import org.aksw.mex.log4mex.MyMEXVO;
 
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
@@ -8,7 +7,7 @@ import org.aksw.mex.log4mex.MyMEXVO;
  */
 public final class MEXHandler {
 	
-	private static final MyMEXVO voc = new MyMEXVO();
+//	private static final MyMEXVO voc = new MyMEXVO();
 	
 	public static String getJSONString(RDFEmbedding emb) {
 		// TODO
