@@ -37,7 +37,6 @@ public class RDFEmbedding {
 		this.embeddings = embeddings;
 	}
 	
-	@JsonProperty(URIs.HYPERP)
 	public String getHyperp() {
 		return hyperp;
 	}

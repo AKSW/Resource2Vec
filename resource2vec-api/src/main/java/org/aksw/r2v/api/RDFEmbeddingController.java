@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import org.aksw.mex.log4mex.MyMEXVO;
 import org.aksw.r2v.api.utils.Shell;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
@@ -161,7 +162,7 @@ public class RDFEmbeddingController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/process")
-	public RDFEmbedding process(@RequestParam("file") MultipartFile file,
+	public String process(@RequestParam("file") MultipartFile file,
 			@RequestParam(value = "dataset", defaultValue = "") String dataset,
 			@RequestParam(value = "name", defaultValue = "") String name,
 			@RequestParam(value = "method", defaultValue = "") String method,
@@ -179,8 +180,10 @@ public class RDFEmbeddingController {
 		
 		if(name.isEmpty())
 			name = dataset.substring(dataset.lastIndexOf('/') + 1);
-
-		return rdfEmbedding(dataset, name, method, hyperp);
+		
+		RDFEmbedding emb = rdfEmbedding(dataset, name, method, hyperp);
+		
+		return MEXHandler.getJSONString(emb);
 		
 	}
 

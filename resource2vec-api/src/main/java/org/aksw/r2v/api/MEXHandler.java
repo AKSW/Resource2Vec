@@ -6,12 +6,13 @@ import org.aksw.mex.log4mex.MyMEXVO;
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
-public final class URIs {
+public final class MEXHandler {
 	
 	private static final MyMEXVO voc = new MyMEXVO();
 	
-	// TODO
-	
-	public static final String HYPERP = "http://mex.aksw.org/mex-core#hyperparameters";
+	public static String getJSONString(RDFEmbedding emb) {
+		// TODO
+		return emb.toString();
+	}
 	
 }
