@@ -13,12 +13,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public void addViewControllers(ViewControllerRegistry registry) {
 
 		// paths where '.' should rewrite to 'index.html'
-		String[] paths = { "/", "/api/v0.1/" };
+		String[] paths = { "", "/api/v0.1" };
 		for (String path : paths)
-			rewrite(path, path + "index.html", registry);
+			rewrite(path, path + "/index.html", registry);
+		
+		// root
+		rewrite("", "/index.html", registry);
 		
 		// redirects
-		redirect("/api/", "/api/v0.1/", registry);
+		redirect("/api", "/api/v0.1", registry);
 		
 	}
 
