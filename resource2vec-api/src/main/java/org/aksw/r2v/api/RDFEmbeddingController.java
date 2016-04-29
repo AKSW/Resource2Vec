@@ -113,7 +113,7 @@ public class RDFEmbeddingController {
 	}
 
 
-	private HashMap<String, String> toMap(String hyperp) {
+	public static HashMap<String, String> toMap(String hyperp) {
 		HashMap<String, String> map = new HashMap<>();
 		if(hyperp.isEmpty())
 			return map;

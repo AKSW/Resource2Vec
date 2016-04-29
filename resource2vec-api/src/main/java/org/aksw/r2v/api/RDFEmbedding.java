@@ -1,6 +1,6 @@
 package org.aksw.r2v.api;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.HashMap;
 
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
@@ -37,8 +37,8 @@ public class RDFEmbedding {
 		this.embeddings = embeddings;
 	}
 	
-	public String getHyperp() {
-		return hyperp;
+	public HashMap<String, String> getHyperp() {
+		return RDFEmbeddingController.toMap(hyperp);
 	}
 	
 }
