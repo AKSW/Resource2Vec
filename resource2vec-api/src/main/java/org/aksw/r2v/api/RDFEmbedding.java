@@ -3,6 +3,12 @@ package org.aksw.r2v.api;
 import java.util.HashMap;
 
 /**
+ * 
+ * dataset = "file:///tmp/resource2vec/datasets/yagoSchema.ttl"; // this is used internally and doesn't have to be revealed
+ * method = "RESCAL"; // this is the algorithm which created the embeddings
+ * hyperp = "rank=2"; // hyperparameters (then you can use the map)
+ * embeddings = "http://w3id.org/resource2vec/embeddings/GENERATEDHASH"; // embeddings URI that will redirect to OpenML
+ *  
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */

@@ -28,7 +28,7 @@ public class CollectData {
 		// build arff file
 		PrintWriter pw = new PrintWriter(arff);
 		String hyp = hyperp.isEmpty() ? "" : " " + hyperp;
-		pw.println("@RELATION \"" + method.toUpperCase() + hyp + "\"\n");
+		pw.println("@RELATION \"" + method.toUpperCase().replaceAll("\"", "") + hyp + "\"\n");
 		pw.println("@ATTRIBUTE URI STRING");
 		for (int i = 0; in1.hasNextLine(); i++) {
 			// for each instance...
@@ -37,7 +37,7 @@ public class CollectData {
 			if (i == 0)
 				header(pw, vec.length);
 			StringBuffer sb = new StringBuffer();
-			sb.append("\"" + uri + "\",");
+			sb.append("\"" + uri.replaceAll("\"", "'") + "\",");
 			for (String v : vec)
 				sb.append(v + ",");
 			sb.deleteCharAt(sb.length() - 1);
