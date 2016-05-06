@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description"
+	content="Resource2Vec provides Knowledge Graph Embeddings of RDF Datasets using state-of-the-art methods.">
+<meta name="author" content="Tommaso Soru, AKSW Leipzig">
+<link rel="icon" href="favicon.ico">
+
+<title>Resource2Vec - Knowledge Graph Embeddings of RDF Datasets</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/album.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="navbar-collapse collapse inverse" id="navbar-header">
+		<div class="container-fluid">
+			<div class="about">
+				<h4>About</h4>
+				<p class="text-muted">Resource2Vec provides vector
+					representations of RDF Datasets using state-of-the-art Knowledge
+					Graph Embedding methods.</p>
+			</div>
+			<div class="social">
+				<h4>Contact</h4>
+				<ul class="list-unstyled">
+					<!-- <li><a href="#">Project page at AKSW</a></li> -->
+					<li><a href="http://github.com/AKSW/Resource2Vec">GitHub
+							project</a></li>
+					<li><a href="#">Mailing list</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="navbar navbar-static-top navbar-dark bg-inverse">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbar-header">&#9776;</button>
+			<a href="/" class="navbar-brand">Resource2Vec</a>
+		</div>
+	</div>
+
+	<section class="jumbotron text-xs-center">
+		<div class="container">
+			<h1 class="jumbotron-heading">Get embeddings</h1>
+			<div>
+				<form id="theform" method="POST" action="./process" enctype="multipart/form-data">
+
+					<!-- FIRST CHOICE: SELECT -->
+					<label>Dataset</label>&nbsp; <select name="dataset" id="uploadoption">
+						<!-- <option value=""> Enter dataset URL </option> -->
+						<option value="">-- Upload new dataset --</option>
+						<option value="file:///tmp/resource2vec/datasets/yagoSchema.ttl"
+							selected="selected">YAGO Schema</option>
+					</select>
+
+					<!-- SECOND CHOICE: INSERT -->
+					<!-- <label>Dataset URL</label>&nbsp;<input type="text" name="dataset"> -->
+
+					<!-- THIRD CHOICE: UPLOAD -->
+					<div id="uploadfile">
+						<label>Upload</label>&nbsp;<input type="file" name="file"
+							accept="*/*">
+							<label>Dataset name</label>&nbsp;<input
+							type="text" name="name"> 
+					</div>
+					<div>
+						<label>Method</label>&nbsp; <select
+							name="method">
+							<option value="RESCAL" selected="selected">RESCAL</option>
+						</select>
+					</div>
+					<div id="description">
+						RESCAL is a tensor factorization for large-scale relational
+						learning from Linked Data, multi-relational data and large
+						multigraphs.<br> <br> <a
+							href="https://github.com/mnick/rescal.py" target="_blank">https://github.com/mnick/rescal.py</a>
+					</div>
+
+					<label>Hyperparameters</label>&nbsp;<input type="text"
+						name="hyperp" value="rank=2">
+				</form>
+			</div>
+			<p>
+				<a href="#" onclick="$('#theform').submit();" class="btn btn-primary">Get embeddings</a>
+			</p>
+		</div>
+	</section>
+	
+	<footer class="text-muted">
+      <div class="container">
+        <p class="pull-xs-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>Resource2Vec is brought online under a CC-BY license.</p>
+        <p>Creator and maintainer: <a href="http://aksw.org/TommasoSoru">Tommaso Soru</a>, AKSW, University of Leipzig.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/holder.min.js"></script>
+    <script>
+      $(function () {
+        Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
+      });
+	  
+	  $("#uploadoption").change(function() {
+		  if( $( "#uploadoption option:selected" ).text() == "-- Upload new dataset --" )
+			  $("#uploadfile").show();
+		  else
+			  $("#uploadfile").hide();
+	  });
+	  
+	  $("#uploadfile").hide();
+	  
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

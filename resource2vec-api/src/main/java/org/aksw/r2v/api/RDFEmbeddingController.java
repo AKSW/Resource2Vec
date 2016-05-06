@@ -3,30 +3,19 @@ package org.aksw.r2v.api;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 
-import org.aksw.mex.log4mex.MyMEXVO;
-import org.aksw.r2v.api.utils.Shell;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openml.apiconnector.algorithms.Conversion;
-import org.openml.apiconnector.io.OpenmlConnector;
-import org.openml.apiconnector.xml.DataSetDescription;
-import org.openml.apiconnector.xml.UploadDataSet;
-import org.openml.apiconnector.xstream.XstreamXmlMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.thoughtworks.xstream.XStream;
 
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
@@ -85,15 +74,15 @@ public class RDFEmbeddingController {
 		}
 
 		// upload arff to openml
-//		try {
-//			int id = OpenMLController.upload(arff, method, name, hyperpMap, rdfemb);
-//		} catch (Exception e) {
-//			log.error(e.getMessage());
-//			return null;
-//		}
+		try {
+			OpenMLController.upload(arff, method, name, hyperpMap, rdfemb);
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			return null;
+		}
 		
-		// TODO remove me!
-		OpenMLController.simulateUpload(arff, rdfemb);
+//		// TODO remove me!
+//		OpenMLController.simulateUpload(arff, rdfemb);
 		
 		// delete tmp files
 		try {
@@ -183,7 +172,8 @@ public class RDFEmbeddingController {
 		
 		RDFEmbedding emb = rdfEmbedding(dataset, name, method, hyperp);
 		
-		return MEXHandler.getJSONString(emb);
+		// TODO replace with MEX integration
+		return MEXHandler.getJSONStringAlt(emb, name);
 		
 	}
 

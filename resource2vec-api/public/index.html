@@ -1,1 +1,129 @@
-<html><body>Hello world!</body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Resource2Vec provides Knowledge Graph Embeddings of RDF Datasets using state-of-the-art methods.">
+    <meta name="author" content="Tommaso Soru, AKSW Leipzig">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Resource2Vec - Knowledge Graph Embeddings of RDF Datasets</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/album.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="navbar-collapse collapse inverse" id="navbar-header">
+      <div class="container-fluid">
+        <div class="about">
+          <h4>About</h4>
+          <p class="text-muted">Resource2Vec provides vector representations of RDF Datasets using state-of-the-art Knowledge Graph Embedding methods.</p>
+        </div>
+        <div class="social">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <!-- <li><a href="#">Project page at AKSW</a></li> -->
+            <li><a href="http://github.com/AKSW/Resource2Vec">GitHub project</a></li>
+            <li><a href="#">Mailing list</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-static-top navbar-dark bg-inverse">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
+          &#9776;
+        </button>
+        <a href="/" class="navbar-brand">Resource2Vec</a>
+      </div>
+    </div>
+
+    <section class="jumbotron text-xs-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Resource2Vec</h1>
+        <p class="lead text-muted">Providing RDF Graph Embeddings.</p>
+        <p>
+          <a href="/embed.html" class="btn btn-primary">Get started</a>
+          <a href="/api" class="btn btn-secondary">API documentation</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="album text-muted">
+      <div class="container">
+
+        <div class="row">
+          <div class="card">
+            <img src="/logos/dbpedia.png" data-src="holder.js/100px280/thumb" alt="DBpedia logo">
+            <p class="card-text">RESCAL Tensor Factorization (rank=3) on instances of <code>dbo:European_Union_Country</code>.</p>
+          </div>
+          <div class="card">
+            <img src="/logos/yago.png" data-src="holder.js/100px280/thumb" alt="YAGO logo">
+            <p class="card-text">RESCAL Tensor Factorization (rank=2) on YAGO Schema.</p>
+          </div>
+          <div class="card">
+            <img src="/logos/wordnet.png" data-src="holder.js/100px280/thumb" alt="WordNet logo">
+            <p class="card-text">RESCAL Tensor Factorization (rank=300) on WordNet.</p>
+          </div>
+
+          <div class="card">
+            <img src="/logos/umbel.png" data-src="holder.js/100px280/thumb" alt="Umbel logo">
+            <p class="card-text">RESCAL Tensor Factorization (rank=2) on the Umbel ontology.</p>
+          </div>
+          <div class="card">
+            <img src="/logos/freebase.png" data-src="holder.js/100px280/thumb" alt="Freebase logo">
+            <p class="card-text">RESCAL Tensor Factorization (rank=10) on the Freebase benchmark subset named <code>FB13K</code>.</p>
+          </div>
+          <div class="card">
+            <img src="/logos/oaei.png" data-src="holder.js/100px280/thumb" alt="file.rdf">
+            <p class="card-text">RESCAL Tensor Factorization (rank=5) on the Person11 dataset from the OAEI benchmark.</p>
+          </div>
+
+<!--           <div class="card">
+            <img src="/logos/generic_rdf.png" data-src="holder.js/100px280/thumb" alt="file.rdf">
+            <p class="card-text">RESCAL Tensor Factorization (rank=2) on a dataset.</p>
+          </div>
+          <div class="card">
+            <img src="/logos/generic_rdf.png" data-src="holder.js/100px280/thumb" alt="file.rdf">
+            <p class="card-text">RESCAL Tensor Factorization (rank=2) on a dataset.</p>
+          </div>
+          <div class="card">
+            <img src="/logos/generic_rdf.png" data-src="holder.js/100px280/thumb" alt="file.rdf">
+            <p class="card-text">RESCAL Tensor Factorization (rank=2) on a dataset.</p>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="pull-xs-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>Resource2Vec is brought online under a CC-BY license.</p>
+        <p>Creator and maintainer: <a href="http://aksw.org/TommasoSoru">Tommaso Soru</a>, AKSW, University of Leipzig.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/holder.min.js"></script>
+    <script>
+      $(function () {
+        Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
+      });
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
