@@ -1,24 +1,7 @@
 package org.aksw.r2v.api;
 
-import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.HashMap;
-
-import org.aksw.mex.log4mex.MEXSerializer;
-import org.aksw.mex.log4mex.MyMEX;
-import org.aksw.mex.util.*;
-import org.aksw.mex.util.MEXEnum.EnumAlgorithms;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFDataMgr;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
