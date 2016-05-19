@@ -13,15 +13,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public void addViewControllers(ViewControllerRegistry registry) {
 
 		// paths where '.' should rewrite to 'index.html'
-		String[] paths = { "", "/api/v0.1" };
+		String[] paths = { "" };
 		for (String path : paths)
 			rewrite(path, path + "/index.html", registry);
-		
-		// root
-		rewrite("", "/index.html", registry);
-		
-		// redirects
+				
+		// current API version
 		redirect("/api", "/api/v0.1", registry);
+		
+		// redirect to view Slate documentation correctly
+		redirect("/api/v0.1", "/api/v0.1/index.html", registry);
 		
 	}
 
@@ -33,7 +33,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	private void redirect(String origin, String destination,
 			ViewControllerRegistry registry) {
 		registry.addViewController(origin).setViewName("redirect:" + destination);
-
+		registry.addViewController(origin + "/").setViewName("redirect:" + destination);
 	}
 
 }
