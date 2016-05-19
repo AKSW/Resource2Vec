@@ -1,1 +1,379 @@
-<html><body>Hello world!</body></html>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Resource2Vec API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">json</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li>Resource2Vec API v0.1</li>
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to Resource2Vec API!</p>
+
+<h1 id="authentication">Authentication</h1>
+
+<p>At the moment, this API does not require authentication.</p>
+
+<h1 id="endpoints">Endpoints</h1>
+
+<h2 id="process-rdf-file">Process RDF file</h2>
+
+<blockquote>
+<p>Example of returned data:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"@graph"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"this:MC0_MEX_EXEC_D1_1"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"mexperf:StatisticalMeasure"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prov:Entity"</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="nt">"mexperf:processingTime"</span><span class="p">:</span><span class="mi">3245</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"wasInformedBy"</span><span class="p">:</span><span class="s2">"this:EXECC0_MEX_EXEC_D1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"this:PAR1"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"mexcore:HyperParameter"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prov:Entity"</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="nt">"identifier"</span><span class="p">:</span><span class="s2">"rank"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"2"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"this:rescal"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"mexalgo:Algorithm"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prov:Entity"</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="nt">"hasParameterCollection"</span><span class="p">:</span><span class="s2">"this:PAR1"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"identifier"</span><span class="p">:</span><span class="s2">"algorithm1"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"hasAlgorithmClass"</span><span class="p">:</span><span class="s2">"mexalgo:TensorFactorization"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"this:application"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"mexcore:ApplicationContext"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prov:Organization"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prov:Person"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prov:Agent"</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="nt">"dateCopyrighted"</span><span class="p">:</span><span class="s2">"2016.05.01 01:31:54 CEST"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"givenName"</span><span class="p">:</span><span class="s2">"Tommaso Soru"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"mbox"</span><span class="p">:</span><span class="s2">"tsoru@informatik.uni-leipzig.de"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"this:dataset"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"mexcore:Dataset"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prov:Entity"</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"yagoSchema"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"landingPage"</span><span class="p">:</span><span class="s2">"tmp/resource2vec/datasets/yagoSchema.ttl"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"this:experiment-header"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"mexcore:Experiment"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prov:Entity"</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="nt">"identifier"</span><span class="p">:</span><span class="s2">"MEX_EXPERIMENT"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"wasAttributedTo"</span><span class="p">:</span><span class="s2">"this:application"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"this:feature1"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"mexcore:Feature"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"prov:Entity"</span><span class="w">
+         </span><span class="p">],</span><span class="w">
+         </span><span class="nt">"identifier"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"label"</span><span class="p">:</span><span class="s2">"http://w3id.org/resource2vec/embeddings/15785942"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"this:version"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"hasVersion"</span><span class="p">:</span><span class="s2">"1.0.1"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="nt">"@context"</span><span class="p">:{</span><span class="w">
+      </span><span class="nt">"mbox"</span><span class="p">:</span><span class="s2">"http://xmlns.com/foaf/0.1/mbox"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"givenName"</span><span class="p">:</span><span class="s2">"http://xmlns.com/foaf/0.1/givenName"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"dateCopyrighted"</span><span class="p">:</span><span class="s2">"http://purl.org/dc/terms/dateCopyrighted"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"label"</span><span class="p">:</span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#label"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"identifier"</span><span class="p">:</span><span class="s2">"http://purl.org/dc/terms/identifier"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"testSize"</span><span class="p">:</span><span class="s2">"http://mex.aksw.org/mex-core#testSize"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"trainSize"</span><span class="p">:</span><span class="s2">"http://mex.aksw.org/mex-core#trainSize"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"folds"</span><span class="p">:</span><span class="s2">"http://mex.aksw.org/mex-core#folds"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"landingPage"</span><span class="p">:</span><span class="s2">"http://www.w3.org/ns/dcat#landingPage"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"http://purl.org/dc/terms/title"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"wasInformedBy"</span><span class="p">:{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"http://www.w3.org/ns/prov#wasInformedBy"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:</span><span class="s2">"@id"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"used"</span><span class="p">:{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"http://www.w3.org/ns/prov#used"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:</span><span class="s2">"@id"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"group"</span><span class="p">:{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"http://mex.aksw.org/mex-core#group"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:</span><span class="s2">"http://www.w3.org/2001/XMLSchema#boolean"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"http://www.w3.org/ns/prov#id"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"wasAttributedTo"</span><span class="p">:{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"http://www.w3.org/ns/prov#wasAttributedTo"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:</span><span class="s2">"@id"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"http://www.w3.org/ns/prov#value"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"processingTime"</span><span class="p">:{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"http://mex.aksw.org/mex-perf#processingTime"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:</span><span class="s2">"http://www.w3.org/2001/XMLSchema#double"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"hasParameterCollection"</span><span class="p">:{</span><span class="w">
+         </span><span class="nt">"@id"</span><span class="p">:</span><span class="s2">"http://mex.aksw.org/mex-algo#hasParameterCollection"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"@type"</span><span class="p">:</span><span class="s2">"@id"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"hasVersion"</span><span class="p">:</span><span class="s2">"http://purl.org/dc/terms/hasVersion"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"owl"</span><span class="p">:</span><span class="s2">"http://www.w3.org/2002/07/owl#"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"this"</span><span class="p">:</span><span class="s2">"http://w3id.org/resource2vec/"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"xsd"</span><span class="p">:</span><span class="s2">"http://www.w3.org/2001/XMLSchema#"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rdfs"</span><span class="p">:</span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"dct"</span><span class="p">:</span><span class="s2">"http://purl.org/dc/terms/"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"mexcore"</span><span class="p">:</span><span class="s2">"http://mex.aksw.org/mex-core#"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"doap"</span><span class="p">:</span><span class="s2">"http://usefulinc.com/ns/doap#"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"mexperf"</span><span class="p">:</span><span class="s2">"http://mex.aksw.org/mex-perf#"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"mexalgo"</span><span class="p">:</span><span class="s2">"http://mex.aksw.org/mex-algo#"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"dcat"</span><span class="p">:</span><span class="s2">"http://www.w3.org/ns/dcat#"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"prov"</span><span class="p">:</span><span class="s2">"http://www.w3.org/ns/prov#"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"foaf"</span><span class="p">:</span><span class="s2">"http://xmlns.com/foaf/0.1/"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"dc"</span><span class="p">:</span><span class="s2">"http://purl.org/dc/elements/1.1/"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>In case of exceptions, a message is attached. Example:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dataset not found."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get or compute knowledge graph embeddings for a given RDF dataset.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://resource2vec.aksw.org/process</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>-</td>
+<td>The dataset name. In case <code class="prettyprint">file</code> or <code class="prettyprint">dataset</code> are not null, it will be applied as label to the newly loaded dataset.</td>
+</tr>
+<tr>
+<td>file</td>
+<td>Optional</td>
+<td>An RDF file in any format.</td>
+</tr>
+<tr>
+<td>dataset</td>
+<td>Optional</td>
+<td>The dataset URL. If <code class="prettyprint">file</code> is not null, it will be ignored.</td>
+</tr>
+<tr>
+<td>method</td>
+<td>-</td>
+<td>The knowledge graph embedding method.</td>
+</tr>
+<tr>
+<td>hyperp</td>
+<td>-</td>
+<td>A map of hyperparameters as string (e.g., <code class="prettyprint">par1=123;par2=456</code>).</td>
+</tr>
+</tbody></table>
+
+          <h1 id="errors">Errors</h1>
+
+<p>The Resource2Vec API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&rsquo;m a teapot</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">json</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
