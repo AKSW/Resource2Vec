@@ -9,6 +9,8 @@ import java.util.TreeSet;
 
 import org.aksw.r2v.model.R2VModel;
 import org.aksw.r2v.strategy.TfidfFEXStrategy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLIndividual;
@@ -28,6 +30,8 @@ import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
  */
 public class R2VManager {
 
+	private final static Logger logger = LogManager.getLogger(R2VManager.class);
+			
 	/**
 	 * Train on resources of a given class.
 	 * 
@@ -103,7 +107,7 @@ public class R2VManager {
 		for (OWLNamedIndividual i : instances) {
 			ind.add(i);
 		}
-		System.out.println("|I| = " + ind.size() + "\t\tI = " + ind);
+		logger.info("|I| = " + ind.size() + "\t\tI = " + ind);
 
 		return ind;
 

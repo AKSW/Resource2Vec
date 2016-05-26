@@ -1,10 +1,17 @@
 package org.aksw.r2v.model;
 
+import java.io.Serializable;
+
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
-public class R2VProperty {
+public class R2VProperty implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7038422274332125438L;
 	
 	private String uri;
 	private R2VModel model;

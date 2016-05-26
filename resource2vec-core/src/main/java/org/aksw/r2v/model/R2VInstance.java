@@ -1,5 +1,6 @@
 package org.aksw.r2v.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
@@ -8,7 +9,12 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
-public class R2VInstance {
+public class R2VInstance implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8651466300676417273L;
 	
 	private OWLNamedIndividual ind;
 	private String uri;

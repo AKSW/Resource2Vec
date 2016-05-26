@@ -1,5 +1,6 @@
 package org.aksw.r2v.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -15,7 +16,12 @@ import org.aksw.r2v.tfidf.ngram.NgramTfIdf;
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
-class TfidfIndex {
+class TfidfIndex implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7207160141396055773L;
 
 	private static final int NGRAMS = 1;
 

@@ -1,10 +1,17 @@
 package org.aksw.r2v.model;
 
+import java.io.Serializable;
+
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
-public class R2VSubfeature {
+public class R2VSubfeature implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1230271134490452879L;
 	
 	private Double value;
 	private Double normValue;

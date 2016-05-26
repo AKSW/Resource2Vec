@@ -3,6 +3,7 @@ package org.aksw.r2v.model;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -37,11 +38,16 @@ import com.mkobos.pca_transform.PCA.TransformationType;
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
-public class R2VModel {
+public class R2VModel implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7397518446484862404L;
+
 	private final static Logger logger = LogManager.getLogger(R2VModel.class);
 	
-	private OWLOntology ontology;
+	private transient OWLOntology ontology;
 	
 	// as many indexes (tf-idf) as properties
 	private HashMap<String, R2VProperty> properties = new HashMap<>();
@@ -428,5 +434,4 @@ public class R2VModel {
 		
 	}
 
-	
 }

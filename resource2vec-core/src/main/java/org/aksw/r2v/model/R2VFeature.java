@@ -1,5 +1,6 @@
 package org.aksw.r2v.model;
 
+import java.io.Serializable;
 //import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -7,8 +8,13 @@ import java.util.HashMap;
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
  *
  */
-public class R2VFeature {
+public class R2VFeature implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5863920297326616689L;
+
 	private R2VFeatureType type;
 	
 	private R2VModel model;
