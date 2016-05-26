@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.aksw.r2v</groupId>
 	<artifactId>resource2vec-core</artifactId>
-	<version>0.3</version>
+	<version>0.3.2</version>
 	<name>Resource2Vec Core</name>
 	<description>Resource2Vec is a knowledge graph embedding model for RDF graphs.</description>
 	<build>
@@ -90,6 +90,16 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ujmp</groupId>
+			<artifactId>ujmp-core</artifactId>
+			<version>0.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ujmp</groupId>
+			<artifactId>ujmp-gui</artifactId>
+			<version>0.3.0</version>
 		</dependency>
 	</dependencies>
 	<parent>

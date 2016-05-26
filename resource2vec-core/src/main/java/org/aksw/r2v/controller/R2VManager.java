@@ -107,7 +107,8 @@ public class R2VManager {
 		for (OWLNamedIndividual i : instances) {
 			ind.add(i);
 		}
-		logger.info("|I| = " + ind.size() + "\t\tI = " + ind);
+		logger.info("|I| = " + ind.size());
+		logger.debug("I = " + ind);
 
 		return ind;
 

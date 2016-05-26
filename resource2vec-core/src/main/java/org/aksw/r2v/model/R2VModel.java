@@ -13,6 +13,7 @@ import java.util.TreeSet;
 
 import org.aksw.r2v.pca.JblasSVD;
 import org.aksw.r2v.pca.PCAnalysis;
+import org.aksw.r2v.pca.UjmpSVD;
 import org.aksw.r2v.strategy.FEXStrategy;
 import org.aksw.r2v.strategy.TfidfFEXStrategy;
 import org.aksw.r2v.visual.SageVisualization;
@@ -28,6 +29,7 @@ import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
+import org.ujmp.core.SparseMatrix;
 
 import com.mkobos.pca_transform.PCA.TransformationType;
 
@@ -381,6 +383,8 @@ public class R2VModel implements Serializable {
 			
 		} else if(ttype.equals("jblas-svd")) {
 			
+			logger.info("|I| = {}, |F| = {}", instances.size(), mp.size());
+			
 			DoubleMatrix A = new DoubleMatrix(instances.size(), mp.size());
 			
 			String dir = "run_"+(int)(Math.random() * 100000);
@@ -407,7 +411,7 @@ public class R2VModel implements Serializable {
 				pw.close();
 			
 			// TODO remove me
-			pca.setSaveSteps(true);
+			pca.setSaveSteps(false);
 			
 			int dimInt = Integer.parseInt(dim);
 			DoubleMatrix B = pca.pca(A, dimInt);
@@ -424,6 +428,51 @@ public class R2VModel implements Serializable {
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
+									
+		} else if(ttype.equals("ujmp-svd")) {
+			
+			logger.info("|I| = {}, |F| = {}", instances.size(), mp.size());
+			
+			SparseMatrix A = SparseMatrix.Factory.zeros(instances.size(), mp.size());
+			
+			String dir = "run_"+(int)(Math.random() * 100000);
+			logger.info("Current directory: ./etc/"+dir+"/");
+			UjmpSVD pca = new UjmpSVD(dir);
+			PrintWriter pw = null;
+			try {
+				pw = new PrintWriter(new File("etc/"+dir+"/labels_C.txt"));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			
+			// fill out PCA input matrix
+			Iterator<R2VInstance> it = instances.values().iterator();
+			for(int i=0; it.hasNext(); i++) {
+				R2VInstance inst = it.next();
+				HashMap<String, Double> fsv = inst.getFlatSparseVector();
+				for(String feat : fsv.keySet())
+					A.setAsDouble(fsv.get(feat), i, index.get(feat));
+				if(pw != null)
+					pw.println(inst.getUri().substring(1, inst.getUri().length() - 1));
+			}
+			if(pw != null)
+				pw.close();
+						
+			int dimInt = Integer.parseInt(dim);
+			SparseMatrix B = pca.pca(A, dimInt);
+			
+			// normalize into [0,1]^n
+			pca.normalize(B);
+			pca.saveAs("C"+dim, B);
+			
+			// generate script for 3D plots + extract submatrix from namespace only
+			logger.info("Generating SAGE script within namespace '"+namespace+"'...");
+			try {
+				SageVisualization.run(dir, namespace, dimInt);
+				SageVisualization.submatrix(dir, namespace, dimInt);
+			} catch (FileNotFoundException e) {
+				logger.error(e);
 			}
 									
 		} else {
