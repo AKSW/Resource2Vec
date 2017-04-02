@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ontology_base="http://www.okkam.org/ontology_person1.owl#"
+    xmlns:PREFIX="http://www.okkam.org/oaie/person1-"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Person730">
+    <ontology_base:has_address rdf:resource="http://www.okkam.org/oaie/person1-Address730"/>
+    <ontology_base:age>40</ontology_base:age>
+    <ontology_base:phone_numer>08 57331500</ontology_base:phone_numer>
+    <ontology_base:soc_sec_id>9995061</ontology_base:soc_sec_id>
+    <ontology_base:date_of_birth>19690505</ontology_base:date_of_birth>
+    <ontology_base:surname>bakes</ontology_base:surname>
+    <ontology_base:given_name>luke</ontology_base:given_name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb1170">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State1170"/>
+    <ontology_base:name>the gap</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb3190">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State3190"/>
+    <ontology_base:name>kooringal</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State460">
+    <ontology_base:name></ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State1370">
+    <ontology_base:name>nsw</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb4410">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State4410"/>
+    <ontology_base:name>aspley</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State1430">
+    <ontology_base:name>nsw</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Address1630">
+    <ontology_base:is_in_suburb rdf:resource="http://www.okkam.org/oaie/person1-Suburb1630"/>
+    <ontology_base:postcode>4020</ontology_base:postcode>
+    <ontology_base:house_number>87</ontology_base:house_number>
+    <ontology_base:street>macrossan crescent brandon</ontology_base:street>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb3900">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State3900"/>
+    <ontology_base:name>yackandandah</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Person2610">
+    <ontology_base:has_address rdf:resource="http://www.okkam.org/oaie/person1-Address2610"/>
+    <ontology_base:age></ontology_base:age>
+    <ontology_base:phone_numer>02 45426393</ontology_base:phone_numer>
+    <ontology_base:soc_sec_id>4813243</ontology_base:soc_sec_id>
+    <ontology_base:date_of_birth>19520615</ontology_base:date_of_birth>
+    <ontology_base:surname>bussey</ontology_base:surname>
+    <ontology_base:given_name>amy</ontology_base:given_name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Address4940">
+    <ontology_base:is_in_suburb rdf:resource="http://www.okkam.org/oaie/person1-Suburb4940"/>
+    <ontology_base:postcode>6421</ontology_base:postcode>
+    <ontology_base:house_number>60</ontology_base:house_number>
+    <ontology_base:street>brisbane avenue cambrai village</ontology_base:street>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State530">
+    <ontology_base:name>vic</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb3440">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State3440"/>
+    <ontology_base:name>toowoomba</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb620">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State620"/>
+    <ontology_base:name>richmond</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb4460">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State4460"/>
+    <ontology_base:name>bendigo</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Address4080">
+    <ontology_base:is_in_suburb rdf:resource="http://www.okkam.org/oaie/person1-Suburb4080"/>
+    <ontology_base:postcode>2261</ontology_base:postcode>
+    <ontology_base:house_number>451</ontology_base:house_number>
+    <ontology_base:street>findlay street</ontology_base:street>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb3710">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State3710"/>
+    <ontology_base:name>newport</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Address3150">
+    <ontology_base:is_in_suburb rdf:resource="http://www.okkam.org/oaie/person1-Suburb3150"/>
+    <ontology_base:postcode>2230</ontology_base:postcode>
+    <ontology_base:house_number>18</ontology_base:house_number>
+    <ontology_base:street>augustus way</ontology_base:street>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Address2180">
+    <ontology_base:is_in_suburb rdf:resource="http://www.okkam.org/oaie/person1-Suburb2180"/>
+    <ontology_base:postcode>3152</ontology_base:postcode>
+    <ontology_base:house_number>41</ontology_base:house_number>
+    <ontology_base:street>harbison crescent hillcrest</ontology_base:street>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb1280">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State1280"/>
+    <ontology_base:name>dianella</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State570">
+    <ontology_base:name>nsw</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb3100">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State3100"/>
+    <ontology_base:name>birkdale</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Address4980">
+    <ontology_base:is_in_suburb rdf:resource="http://www.okkam.org/oaie/person1-Suburb4980"/>
+    <ontology_base:postcode>4700</ontology_base:postcode>
+    <ontology_base:house_number>42</ontology_base:house_number>
+    <ontology_base:street>ivo whitton circuit</ontology_base:street>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Person2560">
+    <ontology_base:has_address rdf:resource="http://www.okkam.org/oaie/person1-Address2560"/>
+    <ontology_base:age>31</ontology_base:age>
+    <ontology_base:phone_numer>07 79388945</ontology_base:phone_numer>
+    <ontology_base:soc_sec_id>1819558</ontology_base:soc_sec_id>
+    <ontology_base:date_of_birth>19380427</ontology_base:date_of_birth>
+    <ontology_base:surname>hofto</ontology_base:surname>
+    <ontology_base:given_name>rebecca</ontology_base:given_name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Person1030">
+    <ontology_base:has_address rdf:resource="http://www.okkam.org/oaie/person1-Address1030"/>
+    <ontology_base:age></ontology_base:age>
+    <ontology_base:phone_numer></ontology_base:phone_numer>
+    <ontology_base:soc_sec_id>4277039</ontology_base:soc_sec_id>
+    <ontology_base:date_of_birth></ontology_base:date_of_birth>
+    <ontology_base:surname>o'brien</ontology_base:surname>
+    <ontology_base:given_name>james</ontology_base:given_name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Person4310">
+    <ontology_base:has_address rdf:resource="http://www.okkam.org/oaie/person1-Address4310"/>
+    <ontology_base:age>25</ontology_base:age>
+    <ontology_base:phone_numer>07 89845963</ontology_base:phone_numer>
+    <ontology_base:soc_sec_id>5883424</ontology_base:soc_sec_id>
+    <ontology_base:date_of_birth>19170707</ontology_base:date_of_birth>
+    <ontology_base:surname>hainsworth</ontology_base:surname>
+    <ontology_base:given_name>lachlan</ontology_base:given_name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb3150">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State3150"/>
+    <ontology_base:name>castle cove</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Person4230">
+    <ontology_base:has_address rdf:resource="http://www.okkam.org/oaie/person1-Address4230"/>
+    <ontology_base:age>25</ontology_base:age>
+    <ontology_base:phone_numer>04 19600919</ontology_base:phone_numer>
+    <ontology_base:soc_sec_id>7943548</ontology_base:soc_sec_id>
+    <ontology_base:date_of_birth>19051001</ontology_base:date_of_birth>
+    <ontology_base:surname>couvalis</ontology_base:surname>
+    <ontology_base:given_name>jake</ontology_base:given_name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb140">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State140"/>
+    <ontology_base:name>malak</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State1330">
+    <ontology_base:name>nsw</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Address760">
+    <ontology_base:is_in_suburb rdf:resource="http://www.okkam.org/oaie/person1-Suburb760"/>
+    <ontology_base:postcode>2320</ontology_base:postcode>
+    <ontology_base:house_number>9</ontology_base:house_number>
+    <ontology_base:street>stradbroke street north end</ontology_base:street>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State1010">
+    <ontology_base:name>vic</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State1730">
+    <ontology_base:name>vic</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State910">
+    <ontology_base:name>vic</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Address2370">
+    <ontology_base:is_in_suburb rdf:resource="http://www.okkam.org/oaie/person1-Suburb2370"/>
+    <ontology_base:postcode>5159</ontology_base:postcode>
+    <ontology_base:house_number>15</ontology_base:house_number>
+    <ontology_base:street>berra close</ontology_base:street>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb920">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State920"/>
+    <ontology_base:name>gympie</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State4950">
+    <ontology_base:name>qld</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Person4470">
+    <ontology_base:has_address rdf:resource="http://www.okkam.org/oaie/person1-Address4470"/>
+    <ontology_base:age>33</ontology_base:age>
+    <ontology_base:phone_numer>08 28494308</ontology_base:phone_numer>
+    <ontology_base:soc_sec_id>8796976</ontology_base:soc_sec_id>
+    <ontology_base:date_of_birth>19210408</ontology_base:date_of_birth>
+    <ontology_base:surname>jones</ontology_base:surname>
+    <ontology_base:given_name>hannah</ontology_base:given_name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb1660">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State1660"/>
+    <ontology_base:name>sans souci</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Person3340">
+    <ontology_base:has_address rdf:resource="http://www.okkam.org/oaie/person1-Address3340"/>
+    <ontology_base:age>27</ontology_base:age>
+    <ontology_base:phone_numer>08 43009388</ontology_base:phone_numer>
+    <ontology_base:soc_sec_id>5220308</ontology_base:soc_sec_id>
+    <ontology_base:date_of_birth>19180124</ontology_base:date_of_birth>
+    <ontology_base:surname>brant</ontology_base:surname>
+    <ontology_base:given_name>kirra</ontology_base:given_name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb3860">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State3860"/>
+    <ontology_base:name>ballina</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-State4910">
+    <ontology_base:name>tas</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Address3410">
+    <ontology_base:is_in_suburb rdf:resource="http://www.okkam.org/oaie/person1-Suburb3410"/>
+    <ontology_base:postcode>2421</ontology_base:postcode>
+    <ontology_base:house_number>138</ontology_base:house_number>
+    <ontology_base:street>dunstan street villa 3</ontology_base:street>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Person4380">
+    <ontology_base:has_address rdf:resource="http://www.okkam.org/oaie/person1-Address4380"/>
+    <ontology_base:age></ontology_base:age>
+    <ontology_base:phone_numer></ontology_base:phone_numer>
+    <ontology_base:soc_sec_id>4734501</ontology_base:soc_sec_id>
+    <ontology_base:date_of_birth>19920421</ontology_base:date_of_birth>
+    <ontology_base:surname>paul</ontology_base:surname>
+    <ontology_base:given_name>caitlin</ontology_base:given_name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.okkam.org/oaie/person1-Suburb3750">
+    <ontology_base:is_in_state rdf:resource="http://www.okkam.org/oaie/person1-State3750"/>
+    <ontology_base:name>mermaid waters</ontology_base:name>
+    <rdf:type rdf:resource="http://www.okkam.org/ontology_person1.owl#Suburb"/>
+  </rdf:Description>
+</rdf:RDF>

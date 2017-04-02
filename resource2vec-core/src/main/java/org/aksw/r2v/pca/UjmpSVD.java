@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.SparseMatrix;
 import org.ujmp.core.calculation.Calculation.Ret;
+import org.ujmp.core.util.UJMPSettings;
 
 /**
  * @author Tommaso Soru <tsoru@informatik.uni-leipzig.de>
@@ -15,21 +16,26 @@ import org.ujmp.core.calculation.Calculation.Ret;
  */
 public class UjmpSVD {
 
-	// public static void main(String[] args) {
-	//
-	// SparseMatrix sparse = SparseMatrix.Factory.zeros(123, 123);
-	//
-	// for(int i=0; i<123; i++)
-	// sparse.setAsDouble(Math.random(), (long) (Math.random() * 123), (long)
-	// (Math.random() * 123));
-	//
-	// Matrix[] svd = sparse.svd();
-	//
-	// Matrix S = svd[1];
-	//
-	// S.showGUI();
-	//
-	// }
+	public static void main(String[] args) {
+
+		SparseMatrix A = SparseMatrix.Factory.zeros(123, 64);
+
+		for (int i = 0; i < 123; i++)
+			A.setAsDouble(Math.random(), (long) (Math.random() * 123),
+					(long) (Math.random() * 64));
+		
+		
+		
+		System.out.println(A instanceof SparseMatrix);
+		UjmpSVD u = new UjmpSVD("XYZ");
+		SparseMatrix B = u.pca(A, 3);
+		System.out.println(B instanceof SparseMatrix);
+		u.normalize(B);
+		System.out.println(B instanceof SparseMatrix);
+
+		B.showGUI();
+		
+	}
 
 	private String dir;
 
@@ -39,6 +45,7 @@ public class UjmpSVD {
 		super();
 		this.dir = dir;
 		new File("etc/" + dir).mkdirs();
+		UJMPSettings.getInstance().setUseJBlas(true);
 	}
 
 	private void centerData(SparseMatrix A) {
@@ -53,18 +60,18 @@ public class UjmpSVD {
 		centerData(A);
 
 		logger.info("Computing SVD...");
-		Matrix[] svd = A.svd(dim);
+		Matrix[] svd = A.svd();
 		Matrix U = svd[0];
 		Matrix S = svd[1];
 
-//		logger.info("Reducing U to Uk...");
-//		Matrix Uk = U.select(Ret.NEW, "*;0-" + dim);
-//
-//		logger.info("Reducing S to Sk...");
-//		Matrix Sk = S.select(Ret.NEW, "0-" + dim + ";0-" + dim);
+		logger.info("Reducing U to Uk...");
+		Matrix Uk = U.select(Ret.NEW, "*;0-" + dim);
+
+		logger.info("Reducing S to Sk...");
+		Matrix Sk = S.select(Ret.NEW, "0-" + dim + ";0-" + dim);
 
 		logger.info("Computing principal components...");
-		return (SparseMatrix) U.mtimes(S);
+		return (SparseMatrix) Uk.mtimes(Sk);
 	}
 
 	public void normalize(SparseMatrix A) {

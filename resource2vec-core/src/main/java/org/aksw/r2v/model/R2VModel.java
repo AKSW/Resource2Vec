@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -29,6 +30,7 @@ import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
+import org.ujmp.core.Matrix;
 import org.ujmp.core.SparseMatrix;
 
 import com.mkobos.pca_transform.PCA.TransformationType;
@@ -466,6 +468,15 @@ public class R2VModel implements Serializable {
 			pca.normalize(B);
 			pca.saveAs("C"+dim, B);
 			
+			ArrayList<R2VInstance> insts = new ArrayList<>(instances.values());
+			
+			Iterator<Matrix> itm = B.getRowList().iterator();
+			for(int i=0; itm.hasNext(); i++) {
+				Matrix m = itm.next();
+				R2VInstance inst = insts.get(i);
+				inst.setReducedV(new R2VMatrix(m));
+			}
+			
 			// generate script for 3D plots + extract submatrix from namespace only
 			logger.info("Generating SAGE script within namespace '"+namespace+"'...");
 			try {
@@ -481,6 +492,10 @@ public class R2VModel implements Serializable {
 			
 		}
 		
+	}
+
+	public HashMap<String, R2VInstance> getInstances() {
+		return instances;
 	}
 
 }

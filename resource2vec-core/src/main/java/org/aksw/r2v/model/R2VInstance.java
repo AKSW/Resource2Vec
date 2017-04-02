@@ -24,6 +24,8 @@ public class R2VInstance implements Serializable {
 	
 	private HashMap<String, Double> flatSparseVector;
 
+	private R2VMatrix reducedV;
+
 	public R2VInstance(R2VModel model, OWLNamedIndividual ind) {
 		super();
 		this.model = model;
@@ -68,6 +70,14 @@ public class R2VInstance implements Serializable {
 	@Override
 	public String toString() {
 		return "R2VInstance [uri=" + uri + ", features=" + features + "]";
+	}
+
+	public R2VMatrix getReducedV() {
+		return reducedV;
+	}
+
+	public void setReducedV(R2VMatrix reducedV) {
+		this.reducedV = reducedV;
 	}
 	
 }
