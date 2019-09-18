@@ -23,4 +23,11 @@
 		<module>resource2vec-api</module>
 	</modules>
 	<packaging>pom</packaging>
+	<repositories>
+	    <repository>
+	      <id>my-repo1</id>
+	      <name>your custom repo</name>
+	      <url>https://repo1.maven.org/maven2/</url>
+	    </repository>
+  	</repositories>
 </project>
